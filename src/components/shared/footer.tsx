@@ -44,7 +44,7 @@ const Footer = () => {
 
             <div>
               <h3 className=" text-2xl font-semibold">Contact</h3>
-              <div className=" mt-3 flex lg:justify-end items-center gap-3">
+              <div className=" mt-3 flex-col flex justify-start  md:flex-row lg:justify-end sm:items-center gap-3">
                 <div className=" flex items-center gap-2 ">
                   <Phone size={20} />
                   <span>+91 6376857793</span>

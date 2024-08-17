@@ -101,7 +101,7 @@ const HomePage = () => {
 
             <MagicCard
               gradientColor="#3C176C"
-              className=" w-full border-none bg-black/20 rounded-2xl text-gray-100 p-10"
+              className=" w-full border-none bg-black/20 rounded-2xl text-gray-100 p-5 md:p-10"
             >
               <div className=" w-full flex flex-col gap-2">
                 <label>First name</label>
