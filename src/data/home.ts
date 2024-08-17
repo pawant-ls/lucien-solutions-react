@@ -26,7 +26,7 @@ export const servicesCard = [
       "Illuminating your brand’s narrative, casting a captivating glow across platforms and expanding your social footprint. With luminous strategies, we ensure your brand shines brightly in the digital realm.",
   },
   {
-    icon : faGauge,
+    icon: faGauge,
     name: "Performance Marketing",
     description:
       "Our precision-targeted strategies ensure your message reaches the right audience at the right moment. This approach captures attention like a mesmerizing aurora and ignites meaningful connections.",
@@ -38,7 +38,7 @@ export const servicesCard = [
       "Crafting compelling email campaigns that cast a spotlight on your brand by enlightening your message, engaging the audience, leading your audience to take action, and leaving a lasting luminous impression.",
   },
   {
-    icon : faPaperPlane,
+    icon: faPaperPlane,
     name: "Visual Storytelling",
     description:
       "Capturing glimmering moments and stories, that reflect directly on your brand, its distinctive qualities, and spirit, illuminating its unique narrative with authenticity and brilliance.",
@@ -47,20 +47,23 @@ export const servicesCard = [
 
 export const contactUsData = [
   {
-    count: "100+",
+    count: 100,
     text: "Projects Delivered",
+    addPlus : true
   },
   {
     count: 3,
     text: "Years Operations",
   },
   {
-    count: "50+",
+    count: 50,
     text: "Clients",
+    addPlus : true
   },
   {
-    count: "30+",
+    count: 30,
     text: "Experts",
+    addPlus : true
   },
 ];
 

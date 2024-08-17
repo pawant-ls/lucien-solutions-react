@@ -6,6 +6,7 @@ import Heading from "../shared/heading";
 import { ourStory, teamData, teamValues } from "@/data/about";
 import { reverse } from "dns";
 import CustomButton from "../shared/button";
+import { MagicCard } from "../magicui/magic-card";
 
 const AboutUsComponent = () => {
   return (
@@ -55,9 +56,10 @@ const AboutUsComponent = () => {
 
             <div className=" grid md:grid-cols-2 gap-5">
               {teamValues.map((value, index) => (
-                <div
+                <MagicCard
+                  gradientColor="#3C176C"
                   key={index}
-                  className={`text-gray-100   p-5 rounded-2xl ${
+                  className={`text-gray-100 border-none   p-5 rounded-2xl ${
                     value.orange ? "bg-black/50" : "bg-black/20"
                   }`}
                 >
@@ -69,7 +71,7 @@ const AboutUsComponent = () => {
                     {value.title}
                   </h1>
                   <p className=" mt-3">{value.description}</p>
-                </div>
+                </MagicCard>
               ))}
             </div>
           </div>

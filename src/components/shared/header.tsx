@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <>
       <header
-        className={` z-[10000] transition-all   fixed inset-x-0 top-0  ${
+        className={`  z-[10000] transition-all   fixed inset-x-0 ${
+          isVisible ? "top-0" : "-top-[100%]"
+        }   ${
           isAtTop
             ? "md:backdrop-blur-md text-white md:bg-black/10 py-2 lg:py-2"
             : " bg-white text-black py-2"

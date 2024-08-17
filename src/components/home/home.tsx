@@ -11,7 +11,10 @@ import { Calendar, User2Icon } from "lucide-react";
 import Heading from "../shared/heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
-
+import { motion } from "framer-motion";
+import BoxReveal from "../magicui/box-reveal";
+import NumberTicker from "../magicui/number-ticker";
+import { MagicCard } from "../magicui/magic-card";
 const HomePage = () => {
   return (
     <main>
@@ -23,14 +26,18 @@ const HomePage = () => {
       >
         <div className="container">
           <div className=" text-gray-200 max-w-xl">
-            <h1 className=" text-3xl md:text-4xl lg:text-5xl font-bold ">
-              Your Digital Lighthouse in the Sea Of Success
-            </h1>
-            <p className=" mt-5 md:mt-10 md:text-xl">
-              Crafted to precision by trusted experts, our data-backed,
-              result-driven, innovative approaches foster meaningful connections
-              with end users.
-            </p>
+            <BoxReveal boxColor={"transparent"} duration={1}>
+              <h1 className=" text-3xl md:text-4xl lg:text-5xl font-bold ">
+                Your Digital Lighthouse in the Sea Of Success
+              </h1>
+            </BoxReveal>
+            <BoxReveal boxColor={"transparent"} duration={1.3}>
+              <p className=" mt-5 md:mt-10 md:text-xl">
+                Crafted to precision by trusted experts, our data-backed,
+                result-driven, innovative approaches foster meaningful
+                connections with end users.
+              </p>
+            </BoxReveal>
 
             <div className=" flex items-center gap-4 mt-10">
               <IconBrandFacebook size={32} />
@@ -75,7 +82,10 @@ const HomePage = () => {
                   key={index}
                   className=" text-gray-800 text-center bg-white p-10 rounded-2xl "
                 >
-                  <h1 className=" text-4xl font-semibold   ">{data.count}</h1>
+                  <h1 className=" text-4xl font-semibold   ">
+                    <NumberTicker value={data.count} /> {data.addPlus && "+"}
+                  </h1>
+
                   <p className=" mt-3">{data.text}</p>
                 </div>
               ))}
@@ -89,8 +99,11 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className=" bg-black/20 rounded-2xl text-gray-100 p-10">
-              <div className=" flex flex-col gap-2">
+            <MagicCard
+              gradientColor="#3C176C"
+              className=" w-full border-none bg-black/20 rounded-2xl text-gray-100 p-10"
+            >
+              <div className=" w-full flex flex-col gap-2">
                 <label>First name</label>
 
                 <input
@@ -119,7 +132,7 @@ const HomePage = () => {
 
                 <textarea className=" bg-black/50 rounded-xl p-3 focus:ring-4 " />
               </div>
-            </div>
+            </MagicCard>
           </div>
 
           <div className=" my-20">
@@ -198,12 +211,52 @@ export const GradientMixer = () => {
 };
 
 export const ServiceCard = ({ service }: { service: any }) => {
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+      },
+    }),
+  };
+
   return (
-    <div className=" text-white text-center bg-black/40 p-10 rounded-2xl ">
-      <FontAwesomeIcon className=" text-4xl mb-3" icon={service.icon} />{" "}
-      <h1 className=" text-2xl font-semibold   ">{service.name}</h1>
-      <p className=" mt-5">{service.description}</p>
-    </div>
+    <>
+      <MagicCard
+        gradientColor="#3C176C"
+        className="text-white border-none cursor-pointer text-center bg-black/40 p-10 rounded-2xl"
+      >
+        <motion.div
+          variants={contentVariants}
+          initial="hidden"
+          whileInView="visible"
+          custom={0}
+        >
+          <FontAwesomeIcon className="text-4xl mb-3" icon={service.icon} />
+        </motion.div>
+        <motion.h1
+          className="text-2xl font-semibold"
+          variants={contentVariants}
+          initial="hidden"
+          whileInView="visible"
+          custom={1}
+        >
+          {service.name}
+        </motion.h1>
+        <motion.p
+          className="mt-5"
+          variants={contentVariants}
+          initial="hidden"
+          whileInView="visible"
+          custom={2}
+        >
+          {service.description}
+        </motion.p>
+      </MagicCard>
+    </>
   );
 };
 
