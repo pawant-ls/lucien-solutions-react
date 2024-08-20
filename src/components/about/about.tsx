@@ -7,10 +7,12 @@ import { ourStory, teamData, teamValues } from "@/data/about";
 import { reverse } from "dns";
 import CustomButton from "../shared/button";
 import { MagicCard } from "../magicui/magic-card";
+import AnimatedTeamProfiles from "./AnimatedTeam";
 
 const AboutUsComponent = () => {
   return (
-    <main className=" pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
+    <main className="  pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
+      <AnimatedTeamProfiles />
       <section className="  container">
         <Heading
           firstLine={["who ", "we are?"]}
@@ -21,6 +23,7 @@ const AboutUsComponent = () => {
 
         <div className=" grid md:grid-cols-2 gap-5">
           <ServiceCard
+            hover={false}
             service={{
               icon: faAnchor,
 
@@ -30,6 +33,7 @@ const AboutUsComponent = () => {
             }}
           />
           <ServiceCard
+            hover={false}
             service={{
               icon: faPaperPlane,
               name: "Our Mission",
@@ -169,8 +173,8 @@ const TeamCard = ({ team }: { team: any }) => {
       <div className=" flex flex-col gap-2">
         <img
           className=" w-full aspect-[5/6] rounded-xl object-cover"
-          src={"https://placehold.co/400x400"}
-          alt="team"
+          src={team.image}
+          alt={team.name}
         />
 
         <h1 className=" mt-3 text-xl font-semibold">

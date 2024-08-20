@@ -101,7 +101,7 @@ const HomePage = () => {
 
             <MagicCard
               gradientColor="#3C176C"
-              className=" w-full border-none bg-black/20 rounded-2xl text-gray-100 p-5 md:p-10"
+              className=" w-full  border-none bg-black/20 rounded-2xl text-gray-100 p-5 md:p-10"
             >
               <div className=" w-full flex flex-col gap-2">
                 <label>First name</label>
@@ -210,7 +210,13 @@ export const GradientMixer = () => {
   );
 };
 
-export const ServiceCard = ({ service }: { service: any }) => {
+export const ServiceCard = ({
+  service,
+  hover = true,
+}: {
+  service: any;
+  hover?: boolean;
+}) => {
   const contentVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -224,11 +230,8 @@ export const ServiceCard = ({ service }: { service: any }) => {
   };
 
   return (
-    <>
-      <MagicCard
-        gradientColor="#3C176C"
-        className="text-white border-none cursor-pointer text-center bg-black/40 p-10 rounded-2xl"
-      >
+    <MagicCard gradientColor="#3C176C" className=" bg-transparent border-none ">
+      <div className="text-white group overflow-hidden  min-h-[250px] flex justify-center items-center flex-col    relative border-none cursor-pointer text-center bg-black/40 p-5 rounded-2xl">
         <motion.div
           variants={contentVariants}
           initial="hidden"
@@ -246,17 +249,35 @@ export const ServiceCard = ({ service }: { service: any }) => {
         >
           {service.name}
         </motion.h1>
-        <motion.p
-          className="mt-5"
-          variants={contentVariants}
-          initial="hidden"
-          whileInView="visible"
-          custom={2}
+        <div
+          className={`z-10  justify-center items-center ${
+            hover
+              ? "sm:hidden sm:group-hover:flex  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-gray-900"
+              : ""
+          }     transition-all p-5`}
         >
-          {service.description}
-        </motion.p>
-      </MagicCard>
-    </>
+          <motion.p
+            className=" text-sm sm:text-base  font-medium"
+            variants={contentVariants}
+            initial="hidden"
+            whileInView="visible"
+            custom={2}
+          >
+            {service.description}
+          </motion.p>
+        </div>
+        {hover && (
+          <span
+            className={`
+            absolute hidden sm:block -left-12 w-3 h-3 z-0 top-1/2 -translate-y-1/2  rounded-full transform translate-x-8 
+            group-hover:scale-[80] group-hover:-translate-x-1/2 
+            transition-all duration-300 ease-in-out
+            bg-primary
+            `}
+          ></span>
+        )}
+      </div>
+    </MagicCard>
   );
 };
 
