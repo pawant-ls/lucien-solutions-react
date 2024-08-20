@@ -49,7 +49,7 @@ export const contactUsData = [
   {
     count: 100,
     text: "Projects Delivered",
-    addPlus : true
+    addPlus: true,
   },
   {
     count: 3,
@@ -58,16 +58,40 @@ export const contactUsData = [
   {
     count: 50,
     text: "Clients",
-    addPlus : true
+    addPlus: true,
   },
   {
     count: 30,
     text: "Experts",
-    addPlus : true
+    addPlus: true,
   },
 ];
 
 export const blogs = [
+  {
+    author: "Sarika Wable",
+    date: "June 15, 2024",
+    title: "Importance Of Greenfluencers",
+    description:
+      "The influencer landscape is undergoing a significant shift, with environmental consciousness taking center stage. Recognizing that sustainable practices are no…",
+    image: "/images/Digital-Marketing-10-768x512.webp",
+  },
+  {
+    author: "Sarika Wable",
+    date: "June 11, 2024",
+    title: "A Startup’s Guide to Digital Marketing Success",
+    description:
+      "Starting a business is challenging, and the digital age has introduced a new hurdle: ensuring your brand is visible online.…",
+    image: "/images/Digital-Marketing-10-768x512.webp",
+  },
+  {
+    author: "Sarika Wable",
+    date: "June 11, 2024",
+    title: "Why Your Law Firm Needs a Comprehensive…",
+    description:
+      "The legal profession has historically relied on established methods like word-of-mouth referrals and television advertising to cultivate clientele. However, today’s…",
+    image: "/images/Digital-Marketing-10-768x512.webp",
+  },
   {
     author: "Sarika Wable",
     date: "June 15, 2024",

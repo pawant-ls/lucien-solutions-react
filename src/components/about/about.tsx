@@ -8,11 +8,11 @@ import { reverse } from "dns";
 import CustomButton from "../shared/button";
 import { MagicCard } from "../magicui/magic-card";
 import AnimatedTeamProfiles from "./AnimatedTeam";
+import { useState } from "react";
 
 const AboutUsComponent = () => {
   return (
     <main className="  pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
-      <AnimatedTeamProfiles />
       <section className="  container">
         <Heading
           firstLine={["who ", "we are?"]}
@@ -42,6 +42,7 @@ const AboutUsComponent = () => {
             }}
           />
         </div>
+
         <div className=" mt-32">
           <Heading
             firstLine={["Team ", "Values"]}
@@ -110,26 +111,47 @@ const AboutUsComponent = () => {
             }}
           />
         </div>
-
-        <div className=" mt-32">
-          <div className=" flex gap-5 my-10 items-center ">
-            <CustomButton size="round" white={false}>
-              All
-            </CustomButton>
-            <CustomButton size="round" white>
-              Core Team
-            </CustomButton>
-          </div>
-          <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8">
-            {teamData.map((team, index) => (
-              <TeamCard key={index} team={team} />
-            ))}
-          </div>
-        </div>
       </section>
+      <AnimatedTeamProfiles />
+
+      <TeamComponent />
 
       <GradientMixer />
     </main>
+  );
+};
+
+const TeamComponent = () => {
+  const [currentTeam, setCurrentTeam] = useState("all");
+
+  return (
+    <section className=" container">
+      <div className=" mt-32">
+        <div className=" flex gap-5 my-10 items-center ">
+          <CustomButton
+            onClick={() => setCurrentTeam("all")}
+            size="round"
+            white={currentTeam === "all" ? false : true}
+          >
+            All
+          </CustomButton>
+          <CustomButton
+            onClick={() => setCurrentTeam("core")}
+            size="round"
+            white={currentTeam === "core" ? false : true}
+          >
+            Core Team
+          </CustomButton>
+        </div>
+
+        <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8">
+          {teamData.map((team, index) => {
+            if (currentTeam === "core" && !team.coreTeam) return null;
+            return <TeamCard key={index} team={team} />;
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
 

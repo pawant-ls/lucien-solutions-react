@@ -15,7 +15,10 @@ import { motion } from "framer-motion";
 import BoxReveal from "../magicui/box-reveal";
 import NumberTicker from "../magicui/number-ticker";
 import { MagicCard } from "../magicui/magic-card";
+import useEmblaCarousel from "embla-carousel-react";
 const HomePage = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+
   return (
     <main>
       <section
@@ -252,7 +255,7 @@ export const ServiceCard = ({
         <div
           className={`z-10  justify-center items-center ${
             hover
-              ? "sm:hidden sm:group-hover:flex  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-gray-900"
+              ? "sm:hidden sm:group-hover:flex  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-white"
               : ""
           }     transition-all p-5`}
         >

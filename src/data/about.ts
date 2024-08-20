@@ -56,6 +56,7 @@ export const teamData = [
       "Leads digital growth, manages agency operations, and cultivates client success.",
     image: "/images/team/Tanya-Bansal.webp",
     division: "Management",
+    coreTeam: true,
   },
   {
     name: "Apoorv Bansal",
@@ -64,6 +65,7 @@ export const teamData = [
       "Leads technical vision, architecting & building core systems to drive innovation and product excellence.",
     image: "/images/team/Apoorv-Bansal.webp",
     division: "Tech",
+    coreTeam: true,
   },
   {
     name: "Mudita Chadha",
@@ -72,6 +74,7 @@ export const teamData = [
       "As a BDM in digital marketing, I drive growth through new opportunities and relationships.",
     image: "/images/team/MuditaChadha.webp",
     division: "PM",
+    coreTeam: true,
   },
   {
     name: "Omkar Shenoy",
@@ -80,6 +83,7 @@ export const teamData = [
       "Managing daily operations in tandem with the team to ensure superior and timely deliverables!",
     image: "/images/team/Omkar-Shenoy.webp",
     division: "PM",
+    coreTeam: true,
   },
   {
     name: "Yatendra Pal",
@@ -88,6 +92,7 @@ export const teamData = [
       "Working with Lucien Solutions as an HR professional. I'm dedicated to upholding solid employer-employee relations and fostering a vibrant, inclusive workplace at Lucien.",
     image: "/images/team/YatendraPal.webp",
     division: "Operations",
+    coreTeam: true,
   },
   {
     name: "Vaibhav Jogdand",

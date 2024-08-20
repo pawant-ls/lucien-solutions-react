@@ -7,18 +7,23 @@
 export const planCategories = [
   {
     name: "SMM Packages",
+    id: "smm-packages",
   },
   {
     name: "PM Packages",
+    id: "pm-packages",
   },
   {
     name: "Website Packages",
+    id: "website-packages",
   },
   {
     name: "Email Packages",
+    id: "email-packages",
   },
   {
     name: "SEO Packages",
+    id: "seo-packages",
   },
 ];
 
