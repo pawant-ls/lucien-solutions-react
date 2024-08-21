@@ -7,8 +7,10 @@ import { ChevronDown, Mail, MenuIcon, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 const Header = () => {
   const { isAtTop, isVisible } = useScrollHeader();
+  const pathname = usePathname();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -47,7 +49,7 @@ const Header = () => {
         initial={{ x: "100%" }}
         animate={{ x: isMenuOpen ? 0 : "100%" }}
         transition={{ duration: 0.5 }}
-        className=" z-[10000000] bg-white fixed inset-y-0 right-0 p-5 text-gray-800 "
+        className=" z-[10000000] lg:hidden bg-white fixed inset-y-0 right-0 p-5 text-gray-800 "
       >
         <div className=" flex items-center justify-between">
           <div className=" w-28">
@@ -61,7 +63,12 @@ const Header = () => {
         <nav onClick={() => setIsMenuOpen(false)} className=" mt-10  ">
           <ul className=" space-y-3 ">
             {urls.map((url, index) => (
-              <li key={index}>
+              <li
+                className={` ${
+                  pathname == url.url && " text-primary font-semibold "
+                }`}
+                key={index}
+              >
                 <Link href={url.url}>{url.name}</Link>
               </li>
             ))}
@@ -90,6 +97,7 @@ const Header = () => {
 };
 
 const ModernNavigation = ({ urls }: { urls: any }) => {
+  const pathname = usePathname();
   return (
     <nav className="hidden lg:block ">
       <div className="container mx-auto px-4">
@@ -110,10 +118,18 @@ const ModernNavigation = ({ urls }: { urls: any }) => {
               },
               index: number
             ) => (
-              <li key={index} className="group relative">
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                key={index}
+                className="group relative"
+              >
                 <Link
                   href={url.url}
-                  className="flex items-center px-4 py-6  hover:text-primary transition-colors duration-300"
+                  className={`flex items-center font-medium px-4 py-6  hover:text-primary transition-colors duration-300 ${
+                    pathname == url.url && " text-primary font-semibold"
+                  } `}
                 >
                   <span>{url.name}</span>
                   {url?.children && (
@@ -151,7 +167,7 @@ const ModernNavigation = ({ urls }: { urls: any }) => {
                     ))}
                   </ul>
                 )}
-              </li>
+              </motion.li>
             )
           )}
         </ul>
