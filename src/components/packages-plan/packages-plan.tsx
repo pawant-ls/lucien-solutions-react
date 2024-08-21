@@ -30,7 +30,7 @@ const PackagesPlanComponent = () => {
         <div className=" flex justify-center my-20 flex-wrap gap-5 ">
           {planCategories.map((item, i) => (
             <a href={`#${item.id}`} key={i}>
-              <CustomButton>{item.name}</CustomButton>
+              <CustomButton className="">{item.name}</CustomButton>
             </a>
           ))}
         </div>

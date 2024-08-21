@@ -1,5 +1,6 @@
 import React from "react";
 import CustomButton from "../shared/button";
+import { CircleCheck, CircleX } from "lucide-react";
 
 const SMMCards = ({ plans }: { plans: any }) => {
   return (
@@ -20,16 +21,20 @@ const SMMCards = ({ plans }: { plans: any }) => {
             <p className="text-gray-500 ">{plan.billingCycle}</p>
           </div>
           <div className=" flex flex-col p-6 ">
-            <ul className="mb-4">
+            <ul className="mb-4 flex-1">
               {Object.entries(plan.features).map(([feature, value], idx) => (
-                <li key={idx} className="flex justify-between py-1">
-                  <span className="text-gray-700">{feature}</span>
-                  <span className="text-gray-500">
-                    {typeof value === "boolean"
-                      ? value
-                        ? "Yes"
-                        : "No"
-                      : (value as React.ReactNode)}
+                <li key={idx} className="flex  justify-between py-1">
+                  <span className="text-gray-700 flex-1">{feature}</span>
+                  <span className="text-gray-500 ">
+                    {typeof value === "boolean" ? (
+                      value ? (
+                        <CircleCheck className=" mx-auto" color="#1ba300" />
+                      ) : (
+                        <CircleX className=" mx-auto" color="#ff0000" />
+                      )
+                    ) : (
+                      (value as React.ReactNode)
+                    )}
                   </span>
                 </li>
               ))}
