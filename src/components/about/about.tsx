@@ -9,7 +9,7 @@ import CustomButton from "../shared/button";
 import { MagicCard } from "../magicui/magic-card";
 import AnimatedTeamProfiles from "./AnimatedTeam";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 const AboutUsComponent = () => {
   return (
     <main className="  pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
@@ -147,7 +147,7 @@ const TeamComponent = () => {
         <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8">
           {teamData.map((team, index) => {
             if (currentTeam === "core" && !team.coreTeam) return null;
-            return <TeamCard key={index} team={team} />;
+            return <TeamCard index={index} key={index} team={team} />;
           })}
         </div>
       </div>
@@ -171,44 +171,81 @@ const OurStoryCard = ({ story }: { story: any }) => {
           />
         </div>
         <div className=" flex-1 mt-5 ">
-          <h1 className=" text-4xl font-semibold">
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className=" text-4xl font-semibold"
+          >
             {story?.title && story?.title[0]}{" "}
             <span className=" text-primary">
               {story?.title && story?.title[1]}
             </span>
-          </h1>
-          <h3 className=" mt-3">
+          </motion.h1>
+          <motion.h3
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className=" mt-3"
+          >
             {story.subHeading && (
               <span className=" text-primary">{story.subHeading}</span>
             )}
-          </h3>
-          <p className=" mt-5">{story.description}</p>
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className=" mt-5"
+          >
+            {story.description}
+          </motion.p>
         </div>
       </div>
     </div>
   );
 };
 
-const TeamCard = ({ team }: { team: any }) => {
+const TeamCard = ({ team, index }: { team: any; index: number }) => {
   return (
     <div className="  text-gray-100  rounded-xl">
       <div className=" flex flex-col gap-2">
-        <img
+        <motion.img
+          whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0, y: 10, scale: 0.8 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: index * 0.1 }}
           className=" w-full aspect-[5/6] rounded-xl object-cover"
           src={team.image}
           alt={team.name}
         />
 
-        <h1 className=" mt-3 text-xl font-semibold">
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className=" mt-3 text-xl font-semibold"
+        >
           {team?.name.split(" ")[0]}{" "}
           <span className=" text-primary">
             {team?.name && team?.name.split(" ")[1]}
           </span>
-        </h1>
-        <h3>
+        </motion.h1>
+        <motion.h3
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <span className=" text-primary">{team?.position}</span>
-        </h3>
-        <p className=" text-sm line-clamp-4  mt-2">{team.description}</p>
+        </motion.h3>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className=" text-sm line-clamp-4  mt-2"
+        >
+          {team.description}
+        </motion.p>
       </div>
     </div>
   );

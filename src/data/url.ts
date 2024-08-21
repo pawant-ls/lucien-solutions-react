@@ -9,7 +9,7 @@ export const urls = [
   },
   {
     name: "Our Services",
-    url: "/services",
+    url: "/our-services",
     children: [
       {
         name: "Search Engine Optimization",
@@ -53,7 +53,7 @@ export const urls = [
   },
   {
     name: "Blog",
-    url: "/blog",
+    url: "/blogs",
   },
 ];
 

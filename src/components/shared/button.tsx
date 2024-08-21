@@ -42,7 +42,7 @@ const CustomButton = ({
       <span
         className={`
           absolute -left-12 w-3 h-3 top-1/2 -translate-y-1/2  rounded-full transform translate-x-8 
-          group-hover:scale-[35] group-hover:-translate-x-1/2 
+          group-hover:scale-[55] group-hover:-translate-x-1/2 
           transition-all duration-300 ease-in-out
           ${white ? "bg-primary" : "bg-white"}
         `}

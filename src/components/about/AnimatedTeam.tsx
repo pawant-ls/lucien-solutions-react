@@ -19,7 +19,7 @@ const AnimatedTeamProfiles: React.FC = () => {
   const [isReady, setIsReady] = useState(false);
 
   const calculateGridPositions = () => {
-    const gridSize = Math.ceil(Math.sqrt(10)); // Only calculate positions for 10 teams
+    const gridSize = Math.ceil(Math.sqrt(5)); // Only calculate positions for 10 teams
     const cellWidth = window.innerWidth / gridSize;
     const cellHeight = (window.innerHeight - 200) / gridSize; // Subtract height to avoid text area
 

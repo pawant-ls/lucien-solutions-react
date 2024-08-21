@@ -1,11 +1,15 @@
+"use client";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
 import { GradientMixer, ServiceCard } from "../home/home";
 import Heading from "../shared/heading";
 import { openings, whatTeamSays, whyWorkWithUs } from "@/data/career";
 import CustomButton from "../shared/button";
 import { MagicCard } from "../magicui/magic-card";
+import WhatOurEmlpoyeesSays from "./what-our-employees";
+import { useRouter } from "next/navigation";
 
 const CareerComponent = () => {
+  const router = useRouter();
   return (
     <main className=" pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651]">
       <section className=" container">
@@ -56,9 +60,13 @@ Come be a part of our diversified team!
                 {opening.description}
               </p>
 
-              <div className=" mt-5 flex items-center justify-between">
+              <div className=" mt-5 flex-col flex-start sm:flex-row gap-5 flex sm:items-center sm:justify-between">
                 <p>{opening.location}</p>
-                <CustomButton size="round" white={false}>
+                <CustomButton
+                  onClick={() => router.push(`/jobs/test-job`)}
+                  size="round"
+                  white={false}
+                >
                   Apply now
                 </CustomButton>
               </div>
@@ -70,38 +78,7 @@ Come be a part of our diversified team!
       <section className=" my-20  container">
         <Heading firstLine={["WHAT OUR EMPLOYEES  ", "SAY"]} />
 
-        <div className=" grid md:grid-cols-3 gap-5">
-          {whatTeamSays.map((testimonial, index) => (
-            <MagicCard
-              key={index}
-              className=" w-full h-full flex flex-col items-center justify-between text-white bg-black/20 border-none p-5 rounded-2xl "
-            >
-              <div className=" flex flex-col justify-between h-full">
-                <p title={testimonial.testimonial} className=" line-clamp-4 ">
-                  {testimonial.testimonial}
-                </p>
-
-                <div className=" mt-5 flex items-center gap-5">
-                  <div>
-                    <img
-                      className=" w-12 object-cover aspect-square rounded-full"
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                    />
-                  </div>
-                  <div>
-                    <h3 className=" text-white text-base font-bold">
-                      {testimonial.name}
-                    </h3>
-                    <p className=" font-medium text-sm text-primary">
-                      {testimonial.position}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </MagicCard>
-          ))}
-        </div>
+        <WhatOurEmlpoyeesSays />
       </section>
 
       <GradientMixer />

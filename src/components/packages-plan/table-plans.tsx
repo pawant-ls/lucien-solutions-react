@@ -19,7 +19,7 @@ const TablePlans = ({ plans }: { plans: any }) => {
   if (plans.length === 0) return null;
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto hidden md:block">
       <table className="min-w-full  bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-100 ">

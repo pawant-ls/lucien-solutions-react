@@ -6,8 +6,8 @@ import {
 } from "@tabler/icons-react";
 import { Badge } from "lucide";
 import { ClientMarquee } from "./client-logo-marquee";
-import { blogs, contactUsData, servicesCard, testimonials } from "@/data/home";
-import { Calendar, User2Icon } from "lucide-react";
+import { contactUsData, servicesCard, testimonials } from "@/data/home";
+import { ArrowRight, Calendar, Plus, User2Icon } from "lucide-react";
 import Heading from "../shared/heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
@@ -16,16 +16,57 @@ import BoxReveal from "../magicui/box-reveal";
 import NumberTicker from "../magicui/number-ticker";
 import { MagicCard } from "../magicui/magic-card";
 import useEmblaCarousel from "embla-carousel-react";
+import BlogCard from "../blogs/card";
+import CustomButton from "../shared/button";
+import Marquee from "../magicui/marquee";
+import Slider from "react-slick";
+import ClientTestimonials from "./testimonials";
+import Blogs from "./blogs";
+
 const HomePage = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
 
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <main>
       <section
         style={{
           backgroundImage: "url('/images/light-house.jpg')",
         }}
-        className=" h-[70vh] lg:h-screen bg-cover bg-center flex items-center justify-center"
+        className="  h-[70vh] lg:h-screen bg-cover bg-center flex items-center justify-center"
       >
         <div className="container">
           <div className=" text-gray-200 max-w-xl">
@@ -51,7 +92,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className=" min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
+      <section className=" overflow-x-hidden min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
         <div className=" container">
           <ClientMarquee />
 
@@ -81,16 +122,7 @@ const HomePage = () => {
           <div className=" mt-20 grid md:grid-cols-2 pb-10 gap-10">
             <div className=" grid grid-cols-2 gap-7 ">
               {contactUsData.map((data, index) => (
-                <div
-                  key={index}
-                  className=" text-gray-800 text-center bg-white p-10 rounded-2xl "
-                >
-                  <h1 className=" text-4xl font-semibold   ">
-                    <NumberTicker value={data.count} /> {data.addPlus && "+"}
-                  </h1>
-
-                  <p className=" mt-3">{data.text}</p>
-                </div>
+                <NumbersCard key={index} data={data} />
               ))}
 
               <div className=" col-span-2  w-full">
@@ -143,67 +175,32 @@ const HomePage = () => {
               firstLine={["Shining a Light on", "Our Clients"]}
               description=""
             />
-
-            <div className=" grid md:grid-cols-2  lg:grid-cols-4 gap-5 ">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className=" bg-black/40 p-4  rounded-2xl text-white"
-                >
-                  <div className=" ">
-                    <div className="flex items-center gap-5 p-5 bg-white rounded-xl text-black">
-                      <img
-                        className=" w-20 rounded-full border"
-                        src={testimonial.logo}
-                        alt=""
-                      />
-                      <h1 className="  font-semibold">{testimonial.company}</h1>
-                    </div>
-                  </div>
-                  <p className=" mt-4 text-sm">{testimonial.testimonial}</p>
-                </div>
-              ))}
-            </div>
+            <ClientTestimonials />
+            <div className="  "></div>
           </div>
 
           <div className=" mt-20">
             <Heading firstLine={["Latest", "Blogs/News"]} description="" />
 
-            <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-              {blogs.map((blog, index) => (
-                <div
-                  key={index}
-                  className=" bg-white p-5 rounded-2xl text-gray-800"
-                >
-                  <img
-                    className=" rounded-lg"
-                    src={blog.image}
-                    alt={blog.title}
-                  />
-
-                  <div className=" flex  items-center gap-3 mt-3">
-                    <div className="text-sm flex items-center gap-1 ">
-                      <User2Icon size={20} />
-                      <span className=" ml-2">{blog.author}</span>
-                    </div>
-                    <div className=" flex items-center gap-1 ">
-                      <Calendar size={20} />
-                      <span className="text-sm ml-2">{blog.date}</span>
-                    </div>
-                  </div>
-
-                  <div className=" mt-3  flex items-center gap-5">
-                    <h1 className=" text-lg font-bold">{blog.title}</h1>
-                  </div>
-                  <p className=" text-sm mt-3">{blog.description}</p>
-                </div>
-              ))}
-            </div>
+            <Blogs />
           </div>
         </div>
       </section>
       <GradientMixer />
     </main>
+  );
+};
+
+export const NumbersCard = ({ data }: { data: any }) => {
+  return (
+    <div className=" text-gray-800 text-center bg-white p-10 rounded-2xl ">
+      <h1 className=" text-4xl flex items-center justify-center font-semibold   ">
+        <NumberTicker value={data.count} />{" "}
+        {data.addPlus && <Plus className=" text-primary font-bold" />}
+      </h1>
+
+      <p className=" mt-3">{data.text}</p>
+    </div>
   );
 };
 
@@ -255,7 +252,7 @@ export const ServiceCard = ({
         <div
           className={`z-10  justify-center items-center ${
             hover
-              ? "sm:hidden sm:group-hover:flex  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-white"
+              ? "sm:hidden sm:group-hover:flex flex-col  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-white"
               : ""
           }     transition-all p-5`}
         >
@@ -268,6 +265,17 @@ export const ServiceCard = ({
           >
             {service.description}
           </motion.p>
+
+          <motion.div
+            variants={contentVariants}
+            initial="hidden"
+            whileInView="visible"
+            className=" hover:underline font-medium text-sm mt-4 "
+          >
+            <span>Find Out More</span>
+
+            <ArrowRight className="w-4 h-4 inline-block ml-2" />
+          </motion.div>
         </div>
         {hover && (
           <span

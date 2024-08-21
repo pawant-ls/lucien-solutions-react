@@ -14,6 +14,7 @@ import SMMTable from "./table-plans";
 import CustomButton from "../shared/button";
 import { GradientMixer } from "../home/home";
 import Link from "next/link";
+import SMMCards from "./plan";
 // import SMMTable from "./plan";
 
 const PackagesPlanComponent = () => {
@@ -38,6 +39,8 @@ const PackagesPlanComponent = () => {
           description="Get the most out of your marketing budget with our performance marketing plans."
         />
         <SMMTable plans={smmPackages} />
+
+        <SMMCards plans={smmPackages} />
       </section>
 
       <section id="pm-packages" className=" container">
@@ -46,18 +49,22 @@ const PackagesPlanComponent = () => {
           description="Get the most out of your marketing budget with our performance marketing plans."
         />
         <SMMTable plans={perfMarketing} />
+        <SMMCards plans={perfMarketing} />
       </section>
       <section id="website-packages" className=" container">
         <Heading firstLine={["WEBSITE  ", "PACKAGES"]} />
         <SMMTable plans={websitePackages} />
+        <SMMCards plans={websitePackages} />
       </section>
       <section id="email-packages" className=" container">
         <Heading firstLine={["EMAIL MARKETING   ", "PACKAGES"]} />
         <SMMTable plans={emailPackages} />
+        <SMMCards plans={emailPackages} />
       </section>
       <section id="seo-packages" className=" container">
         <Heading firstLine={["SEARCH ENGINE OPTIMIZATION   ", "PACKAGES"]} />
         <SMMTable plans={seoPackages} />
+        <SMMCards plans={seoPackages} />
       </section>
 
       <GradientMixer />

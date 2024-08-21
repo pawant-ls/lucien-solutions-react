@@ -85,7 +85,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
 .embla {
   overflow: hidden;
 }
@@ -96,3 +95,13 @@ body {
   flex: 0 0 100%;
   min-width: 0;
 }
+
+/* the slides */
+.slick-slide {
+  margin: 0 7px;
+}
+
+/* the parent */
+/* .slick-list {
+  margin: 0 -27px;
+} */
