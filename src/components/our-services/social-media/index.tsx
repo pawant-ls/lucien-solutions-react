@@ -25,8 +25,8 @@ import { smmPackages } from "@/data/package-plans";
 const SocialMediaMarketingComponent = () => {
   return (
     <MainBackground>
-      <section className=" container">
-        <main className=" sm:-mt-40">
+      <section className="  container">
+        <main className=" min-h-80 bg-transparent  sm:-mt-40">
           <Spline scene="https://prod.spline.design/gNl7F4Fp8CJyOmOZ/scene.splinecode" />
         </main>{" "}
         <div className=" md:-mt-20">
