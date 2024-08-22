@@ -10,9 +10,10 @@ import { MagicCard } from "../magicui/magic-card";
 import AnimatedTeamProfiles from "./AnimatedTeam";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import MainBackground from "../shared/main-bg";
 const AboutUsComponent = () => {
   return (
-    <main className="  pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
+    <MainBackground>
       <section className="  container">
         <Heading
           firstLine={["who ", "we are?"]}
@@ -117,7 +118,7 @@ const AboutUsComponent = () => {
       <TeamComponent />
 
       <GradientMixer />
-    </main>
+    </MainBackground>
   );
 };
 
