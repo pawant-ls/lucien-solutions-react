@@ -55,7 +55,7 @@ export const teamData = [
     description:
       "Leads digital growth, manages agency operations, and cultivates client success.",
     image: "/images/team/Tanya-Bansal.webp",
-    division: "Management",
+    division: "CEO",
     coreTeam: true,
   },
   {
@@ -64,7 +64,7 @@ export const teamData = [
     description:
       "Leads technical vision, architecting & building core systems to drive innovation and product excellence.",
     image: "/images/team/Apoorv-Bansal.webp",
-    division: "Tech",
+    division: "CTO",
     coreTeam: true,
   },
   {

@@ -27,19 +27,65 @@ export const urls = [
             name: "Technical SEO",
             url: "/technical-seo",
           },
+          {
+            name: "Local SEO",
+            url: "/local-seo",
+          },
+          {
+            name: "E-commerce SEO",
+            url: "/e-commerce-seo",
+          },
+          {
+            name: "International SEO",
+            url: "/international-seo",
+          },
         ],
       },
       {
         name: "Social Media Marketing",
         url: "/social-media-marketing",
+        children: [
+          {
+            name: "Instagram",
+            url: "/instagram",
+          },
+          {
+            name: "Facebook",
+            url: "/facebook",
+          },
+          {
+            name: "Graphic Design",
+            url: "/graphic-design",
+          },
+          {
+            name: "Linkedin Marketing",
+            url: "/linkedin-marketing",
+          },
+          {
+            name: "Content Marketing",
+            url: "/content-marketing",
+          },
+          {
+            name: "Influencer Marketing",
+            url: "/influencer-marketing",
+          },
+          {
+            name: "SMM – Performance Marketing",
+            url: "/smm-performance-marketing",
+          },
+        ],
       },
       {
         name: "Email Marketing",
         url: "/email-marketing",
       },
       {
-        name: "Wordpress Development",
-        url: "/wordpress-development",
+        name: "WordPress Website",
+        url: "/wordpress-website",
+      },
+      {
+        name: "Pay Per Click",
+        url: "/pay-per-click",
       },
     ],
   },

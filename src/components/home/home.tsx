@@ -211,11 +211,15 @@ export const GradientMixer = () => {
 };
 
 export const ServiceCard = ({
+  findOutMore = false,
   service,
   hover = true,
+  className = "",
 }: {
   service: any;
   hover?: boolean;
+  findOutMore?: boolean;
+  className?: string;
 }) => {
   const contentVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -231,7 +235,9 @@ export const ServiceCard = ({
 
   return (
     <MagicCard gradientColor="#3C176C" className=" bg-transparent border-none ">
-      <div className="text-white group overflow-hidden  min-h-[250px] flex justify-center items-center flex-col    relative border-none cursor-pointer text-center bg-black/40 p-5 rounded-2xl">
+      <div
+        className={`text-white group overflow-hidden  min-h-[250px] flex justify-center items-center flex-col    relative border-none cursor-pointer text-center bg-black/40 p-5 rounded-2xl ${className}`}
+      >
         <motion.div
           variants={contentVariants}
           initial="hidden"
@@ -249,34 +255,41 @@ export const ServiceCard = ({
         >
           {service.name}
         </motion.h1>
-        <div
-          className={`z-10  justify-center items-center ${
-            hover
-              ? "sm:hidden sm:group-hover:flex flex-col  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-white"
-              : ""
-          }     transition-all p-5`}
-        >
-          <motion.p
-            className=" text-sm sm:text-base  font-medium"
-            variants={contentVariants}
-            initial="hidden"
-            whileInView="visible"
-            custom={2}
+        {service.description && (
+          <div
+            className={`z-10  justify-center items-center ${
+              hover
+                ? "sm:hidden sm:group-hover:flex flex-col  sm:absolute  top-0 left-0 right-0 bottom-0 sm:text-white"
+                : ""
+            }     transition-all flex flex-col items-center justify-center p-5`}
           >
-            {service.description}
-          </motion.p>
+            {service.description && (
+              <motion.p
+                className=" text-sm sm:text-base  font-medium"
+                variants={contentVariants}
+                initial="hidden"
+                whileInView="visible"
+                custom={2}
+              >
+                {service.description}
+              </motion.p>
+            )}
 
-          <motion.div
-            variants={contentVariants}
-            initial="hidden"
-            whileInView="visible"
-            className=" hover:underline font-medium text-sm mt-4 "
-          >
-            <span>Find Out More</span>
+            {findOutMore && (
+              <motion.div
+                variants={contentVariants}
+                initial="hidden"
+                whileInView="visible"
+                className=" hover:underline font-medium text-sm mt-4 "
+              >
+                <span>Find Out More</span>
 
-            <ArrowRight className="w-4 h-4 inline-block ml-2" />
-          </motion.div>
-        </div>
+                <ArrowRight className="w-4 h-4 inline-block ml-2" />
+              </motion.div>
+            )}
+          </div>
+        )}
+
         {hover && (
           <span
             className={`

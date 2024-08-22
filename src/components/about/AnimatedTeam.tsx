@@ -1,6 +1,15 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { teamData } from "@/data/about";
+import Heading from "../shared/heading";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+import { Button } from "../ui/button";
 
 interface TeamMember {
   name: string;
@@ -13,50 +22,64 @@ interface Position {
   y: number;
 }
 
+function sortTeamData(data: any) {
+  // Sort by coreTeam first, then by division
+  return data.sort((a: any, b: any) => {
+    if (a.coreTeam && !b.coreTeam) return -1;
+    if (!a.coreTeam && b.coreTeam) return 1;
+
+    // If both are coreTeam or neither are, sort by division
+    if (a.division < b.division) return -1;
+    if (a.division > b.division) return 1;
+
+    return 0; // If same division, maintain original order
+  });
+}
+
 const AnimatedTeamProfiles: React.FC = () => {
-  const [gridPositions, setGridPositions] = useState<Position[]>([]);
-  const [visibleTeams, setVisibleTeams] = useState<TeamMember[]>([]);
-  const [isReady, setIsReady] = useState(false);
+  // const [gridPositions, setGridPositions] = useState<Position[]>([]);
+  // const [visibleTeams, setVisibleTeams] = useState<TeamMember[]>([]);
+  // const [isReady, setIsReady] = useState(false);
 
-  const calculateGridPositions = () => {
-    const gridSize = Math.ceil(Math.sqrt(5)); // Only calculate positions for 10 teams
-    const cellWidth = window.innerWidth / gridSize;
-    const cellHeight = (window.innerHeight - 200) / gridSize; // Subtract height to avoid text area
+  // const calculateGridPositions = () => {
+  //   const gridSize = Math.ceil(Math.sqrt(5)); // Only calculate positions for 10 teams
+  //   const cellWidth = window.innerWidth / gridSize;
+  //   const cellHeight = (window.innerHeight - 200) / gridSize; // Subtract height to avoid text area
 
-    const positions = Array(10)
-      .fill(null)
-      .map((_, index) => {
-        const row = Math.floor(index / gridSize);
-        const col = index % gridSize;
-        return {
-          x: col * cellWidth + Math.random() * (cellWidth - 100),
-          y: row * cellHeight + Math.random() * (cellHeight - 100) + 200, // Offset to avoid text area
-        };
-      });
+  //   const positions = Array(10)
+  //     .fill(null)
+  //     .map((_, index) => {
+  //       const row = Math.floor(index / gridSize);
+  //       const col = index % gridSize;
+  //       return {
+  //         x: col * cellWidth + Math.random() * (cellWidth - 100),
+  //         y: row * cellHeight + Math.random() * (cellHeight - 100) + 200, // Offset to avoid text area
+  //       };
+  //     });
 
-    setGridPositions(positions);
-    setIsReady(true);
-  };
+  //   setGridPositions(positions);
+  //   setIsReady(true);
+  // };
 
-  useEffect(() => {
-    calculateGridPositions();
-    window.addEventListener("resize", calculateGridPositions);
+  // useEffect(() => {
+  //   calculateGridPositions();
+  //   window.addEventListener("resize", calculateGridPositions);
 
-    return () => window.removeEventListener("resize", calculateGridPositions);
-  }, []);
+  //   return () => window.removeEventListener("resize", calculateGridPositions);
+  // }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const randomTeams = teamData.sort(() => 0.5 - Math.random()).slice(0, 10);
-      setVisibleTeams(randomTeams);
-    }, 3000); // Change teams every 3 seconds
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const randomTeams = teamData.sort(() => 0.5 - Math.random()).slice(0, 10);
+  //     setVisibleTeams(randomTeams);
+  //   }, 3000); // Change teams every 3 seconds
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  if (!isReady) {
-    return <div>Loading...</div>;
-  }
+  // if (!isReady) {
+  //   return <div>Loading...</div>;
+  // }
 
   const randomDesignationPositionTopBottom = () => {
     const positions = ["top-[20%]", "bottom-[20%]"];
@@ -64,16 +87,17 @@ const AnimatedTeamProfiles: React.FC = () => {
   };
 
   const randomDesignationPositionLeftRight = () => {
-    const positions = ["right-[80%]", "left-[80%]"];
+    const positions = ["left-[80%]"];
     return positions[Math.floor(Math.random() * positions.length)];
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <h1 className="text-center mx-auto mt-20 max-w-3xl px-10 text-white text-lg md:text-3xl">
+    <div className="relative my-20 w-full min-h-screen ">
+      <Heading firstLine={["Our", "Team"]} />
+      {/* <h1 className="text-center mx-auto mt-20 max-w-3xl px-10 text-white text-lg md:text-3xl">
         A team of 30+ in-house employees that goes an extra mile
-      </h1>
-      <AnimatePresence>
+      </h1> */}
+      {/* <AnimatePresence>
         {visibleTeams.map((team, index) => {
           const randomColor = () => {
             const colors = [
@@ -96,11 +120,11 @@ const AnimatedTeamProfiles: React.FC = () => {
               animate={{ scale: Math.random() * 0.5 + 0.75 }} // Random scaling
               exit={{ scale: 0 }} // Exit animation
               transition={{ duration: 1 }}
-              style={{
-                position: "absolute",
-                top: gridPositions[index]?.y,
-                left: gridPositions[index]?.x,
-              }}
+              // style={{
+              //   position: "absolute",
+              //   top: gridPositions[index]?.y,
+              //   left: gridPositions[index]?.x,
+              // }}
             >
               <div
                 style={{
@@ -125,7 +149,82 @@ const AnimatedTeamProfiles: React.FC = () => {
             </motion.div>
           );
         })}
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      <div className=" px-10 mt-20 container grid  grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-20">
+        {sortTeamData(teamData).map((team: any, index: number) => {
+          const randomColor = () => {
+            const colors = [
+              "#E04F4F",
+              "#C591E6",
+              "#CDDA32",
+              "#9DE3C4",
+              "#CDDA32",
+              "#E04F4F",
+              "#C591E6",
+              "#CDDA32",
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+          };
+          return (
+            <div className=" group">
+              <Popover>
+                <PopoverTrigger>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    // transition={{ delay: 0.3 }}
+                    whileHover={{
+                      scale: 1.25,
+                    }}
+                    drag
+                    dragConstraints={{
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                    }}
+                    key={team.name}
+                  >
+                    <div
+                      style={{
+                        background: randomColor(),
+                      }}
+                      className="flex w-20 md:w-24 aspect-square md:h-24 rounded-full p-1 relative text-white flex-col items-center gap-2"
+                    >
+                      <img
+                        className=" pointer-events-none  w-full h-full  rounded-full object-cover"
+                        src={team.image}
+                        alt={team.name}
+                      />
+                      <h3
+                        style={{
+                          background: randomColor(),
+                        }}
+                        className={`text-xs font-medium absolute text-black rounded-full px-2 py-1 ${randomDesignationPositionTopBottom()} ${randomDesignationPositionLeftRight()}`}
+                      >
+                        {team?.division}
+                      </h3>
+                    </div>
+                  </motion.div>
+                </PopoverTrigger>
+                <PopoverContent className=" bg-gray-100">
+                  <div>
+                    <h3 className="  font-semibold">{team.name}</h3>
+                    <h4 className=" text-sm font-medium text-primary">
+                      {team.position}
+                    </h4>
+
+                    <p className=" text-sm mt-3 text-gray-800">
+                      {team.description}
+                    </p>
+                  </div>
+                </PopoverContent>
+              </Popover>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

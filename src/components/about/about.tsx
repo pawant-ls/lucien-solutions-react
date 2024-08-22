@@ -22,26 +22,25 @@ const AboutUsComponent = () => {
 "
         />
 
-        <div className=" grid md:grid-cols-2 gap-5">
-          <ServiceCard
-            hover={false}
-            service={{
-              icon: faAnchor,
-
-              name: "Our Vision",
-              description:
-                "To be the most creative digital marketing agency in the world through innovations and excellence.",
-            }}
-          />
-          <ServiceCard
-            hover={false}
-            service={{
-              icon: faPaperPlane,
-              name: "Our Mission",
-              description:
-                "Our mission is to pioneer digital solutions that inspire, connect, and transform businesses worldwide.",
-            }}
-          />
+        <div className=" grid  gap-5">
+          <MagicCard>
+            <div className=" text-white p-8">
+              <h1 className=" text-2xl font-semibold">Our Vision</h1>
+              <p className=" mt-3">
+                To be the most creative digital marketing agency in the world
+                through innovations and excellence.
+              </p>
+            </div>
+          </MagicCard>
+          <MagicCard>
+            <div className=" text-white p-8">
+              <h1 className=" text-2xl font-semibold">Our Mission</h1>
+              <p className=" mt-3">
+                Our mission is to pioneer digital solutions that inspire,
+                connect, and transform businesses worldwide.
+              </p>
+            </div>
+          </MagicCard>
         </div>
 
         <div className=" mt-32">
@@ -51,38 +50,25 @@ const AboutUsComponent = () => {
 "
           />
 
-          <div className=" grid lg:grid-cols-2 gap-5">
-            <div className=" ">
+          <div className=" grid  gap-5">
+            {/* <div className=" ">
               <img
                 className=" aspect-[5/3] object-cover w-full h-full rounded-xl "
                 src="/images/6948bd02fe055cd7b6e559eaca84097d.jpeg"
                 alt="team"
               />
-            </div>
+            </div> */}
 
             <div className=" grid md:grid-cols-2 gap-5">
               {teamValues.map((value, index) => (
-                <MagicCard
-                  gradientColor="#3C176C"
-                  key={index}
-                  className={`text-gray-100 border-none   p-5 rounded-2xl ${
-                    value.orange ? "bg-black/50" : "bg-black/20"
-                  }`}
-                >
-                  <h1
-                    className={`text-xl font-semibold ${
-                      value.orange && " text-primary"
-                    } `}
-                  >
-                    {value.title}
-                  </h1>
-                  <p className=" mt-3">{value.description}</p>
-                </MagicCard>
+                <InfoCard1 key={index} value={value} />
               ))}
             </div>
           </div>
         </div>
+      </section>
 
+      <section className=" container">
         <div className=" mt-32">
           <Heading
             firstLine={["Meet the guiding lights of our brand"]}
@@ -96,7 +82,7 @@ const AboutUsComponent = () => {
           </div>
         </div>
 
-        <div className=" mt-32">
+        {/* <div className=" mt-32">
           <Heading
             firstLine={["A Colorful Melange of ", "Innovators & Creators."]}
             description=""
@@ -111,14 +97,53 @@ const AboutUsComponent = () => {
               reverse: true,
             }}
           />
-        </div>
+        </div> */}
       </section>
+
       <AnimatedTeamProfiles />
 
-      <TeamComponent />
+      {/* <TeamComponent /> */}
 
       <GradientMixer />
     </MainBackground>
+  );
+};
+
+export const InfoCard1 = ({
+  value,
+  size = "md",
+}: {
+  value: any;
+  size?: "md" | "lg";
+}) => {
+  const minHeight = size == "md" ? "min-h-[140px]" : "min-h-[200px]";
+  return (
+    <MagicCard gradientColor="#3C176C">
+      <div
+        className={` flex flex-col justify-center items-center  justify-centerrelative group ${minHeight} text-gray-100 border-none   p-5 rounded-2xl ${
+          value.orange ? "bg-black/50" : "bg-black/20"
+        }`}
+      >
+        <h1
+          className={`text-xl w-full  md:text-center  font-semibold ${
+            value.orange && " text-primary"
+          } `}
+        >
+          {value.title}
+        </h1>
+        <p className=" mt-3 text-sm md:hidden">{value.description}</p>
+        <div className=" rounded-t-xl duration-500 -bottom-[100%] bg-[#3F1651] text-white inset-x-0 h-full p-5 transition-all group-hover:bottom-0  absolute">
+          <p className=" z-10 relative font-medium  mt-3">
+            {value.description}
+          </p>
+          <img
+            className=" z-0  absolute top-0 -right-40"
+            src="/images/bg/clouds2.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </MagicCard>
   );
 };
 
