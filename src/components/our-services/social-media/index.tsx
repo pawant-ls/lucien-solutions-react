@@ -26,7 +26,7 @@ const SocialMediaMarketingComponent = () => {
   return (
     <MainBackground>
       <section className=" container">
-        <main className=" -mt-40">
+        <main className=" sm:-mt-40">
           <Spline scene="https://prod.spline.design/gNl7F4Fp8CJyOmOZ/scene.splinecode" />
         </main>{" "}
         <div className=" md:-mt-20">
