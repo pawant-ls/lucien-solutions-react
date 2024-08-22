@@ -92,7 +92,7 @@ const AnimatedTeamProfiles: React.FC = () => {
   };
 
   return (
-    <div className="relative my-20 w-full min-h-screen ">
+    <div className="relative  my-20 w-full min-h-screen ">
       <Heading firstLine={["Our", "Team"]} />
       {/* <h1 className="text-center mx-auto mt-20 max-w-3xl px-10 text-white text-lg md:text-3xl">
         A team of 30+ in-house employees that goes an extra mile
@@ -151,7 +151,7 @@ const AnimatedTeamProfiles: React.FC = () => {
         })}
       </AnimatePresence> */}
 
-      <div className=" px-10 mt-20 container grid  grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-20">
+      <div className=" pr-20 md:pr-0  mt-20 container grid content-center w-full  grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-20">
         {sortTeamData(teamData).map((team: any, index: number) => {
           const randomColor = () => {
             const colors = [
@@ -171,9 +171,11 @@ const AnimatedTeamProfiles: React.FC = () => {
               <Popover>
                 <PopoverTrigger>
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    // transition={{ delay: 0.3 }}
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      delay: 0.3 * Math.random() * 6,
+                    }}
                     whileHover={{
                       scale: 1.25,
                     }}
