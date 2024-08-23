@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider attribute="class">
+        <ThemeProvider defaultTheme="light" attribute="class">
           <PageTransition>
             <Header />
             {children}
