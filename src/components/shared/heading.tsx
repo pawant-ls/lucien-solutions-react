@@ -8,7 +8,7 @@ const Heading = ({
   thirdLine = "",
 }) => {
   return (
-    <div className=" max-w-5xl my-12 mx-auto text-center text-gray-100">
+    <div className=" max-w-5xl my-12 mx-auto text-center  text-text">
       <div className=" flex justify-center w-full">
         <BoxReveal boxColor={"#FF7A00"} duration={0.5}>
           <h1 className=" text-3xl text-center font-semibold uppercase">

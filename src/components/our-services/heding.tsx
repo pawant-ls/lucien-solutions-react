@@ -6,7 +6,7 @@ const OurServicesHeading = ({
   description: string;
 }) => {
   return (
-    <div className="  flex flex-col items-center  text-white">
+    <div className="  flex flex-col items-center  text-text">
       {/* <div className=" flex gap-5 ">
         {title.split(" ").map((word, index) => (
           <h1 className=" text-6xl font-semibold" key={index}>

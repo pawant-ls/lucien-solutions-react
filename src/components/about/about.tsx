@@ -22,9 +22,9 @@ const AboutUsComponent = () => {
 "
         />
 
-        <div className=" grid  gap-5">
+        <div className=" grid text-text  gap-5">
           <MagicCard>
-            <div className=" text-white p-8">
+            <div className="  p-8">
               <h1 className=" text-2xl font-semibold">Our Vision</h1>
               <p className=" mt-3">
                 To be the most creative digital marketing agency in the world
@@ -33,7 +33,7 @@ const AboutUsComponent = () => {
             </div>
           </MagicCard>
           <MagicCard>
-            <div className=" text-white p-8">
+            <div className=" text-text  p-8">
               <h1 className=" text-2xl font-semibold">Our Mission</h1>
               <p className=" mt-3">
                 Our mission is to pioneer digital solutions that inspire,
@@ -104,7 +104,7 @@ const AboutUsComponent = () => {
 
       {/* <TeamComponent /> */}
 
-      <GradientMixer />
+      {/* <GradientMixer /> */}
     </MainBackground>
   );
 };
@@ -118,10 +118,10 @@ export const InfoCard1 = ({
 }) => {
   const minHeight = size == "md" ? "min-h-[140px]" : "min-h-[200px]";
   return (
-    <MagicCard gradientColor="#3C176C">
+    <MagicCard>
       <div
-        className={` flex flex-col justify-center items-center  justify-centerrelative group ${minHeight} text-gray-100 border-none   p-5 rounded-2xl ${
-          value.orange ? "bg-black/50" : "bg-black/20"
+        className={` flex flex-col justify-center items-center  justify-centerrelative group ${minHeight} text-text border-none   p-5  ${
+          value.orange ? " bg-accent/20" : " bg-accent/20"
         }`}
       >
         <h1
@@ -132,7 +132,7 @@ export const InfoCard1 = ({
           {value.title}
         </h1>
         <p className=" mt-3 text-sm md:hidden">{value.description}</p>
-        <div className=" rounded-t-xl duration-500 -bottom-[100%] bg-[#3F1651] text-white inset-x-0 h-full p-5 transition-all group-hover:bottom-0  absolute">
+        <div className=" rounded-t-xl duration-500 -bottom-[100%] bg-secondary text-text inset-x-0 h-full p-5 transition-all sm:group-hover:bottom-0  absolute">
           <p className=" z-10 relative font-medium  mt-3">
             {value.description}
           </p>
@@ -185,7 +185,7 @@ const OurStoryCard = ({ story }: { story: any }) => {
   return (
     <div>
       <div
-        className={`text-gray-100 items-center flex-col flex   gap-10 ${
+        className={`text-text items-center flex-col flex   gap-10 ${
           story.reverse ? " md:flex-row-reverse" : "md:flex-row"
         } `}
       >

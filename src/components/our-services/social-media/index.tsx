@@ -44,7 +44,7 @@ const SocialMediaMarketingComponent = () => {
         </div>
       </section>
 
-      <section className=" text-white container">
+      <section className=" text-text container">
         <div className=" flex flex-col gap-5 my-20 items-center justify-center">
           <h4 className="   text-xl font-semibold">
             Crafting your brand’s most effective social media marketing
@@ -167,7 +167,7 @@ const SocialMediaMarketingComponent = () => {
         <SMMCards plans={smmPackages} />
       </section>
 
-      <GradientMixer />
+      {/* <GradientMixer /> */}
     </MainBackground>
   );
 };

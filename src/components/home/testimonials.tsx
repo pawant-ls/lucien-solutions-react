@@ -46,8 +46,8 @@ const ClientTestimonials = () => {
         })}
       </CarouselContent>
 
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className=" border-white text-white" />
+      <CarouselNext className=" border-white text-white" />
     </Carousel>
   );
 };

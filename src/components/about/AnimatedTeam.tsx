@@ -188,22 +188,14 @@ const AnimatedTeamProfiles: React.FC = () => {
                     }}
                     key={team.name}
                   >
-                    <div
-                      style={{
-                        background: randomColor(),
-                      }}
-                      className="flex w-20 md:w-24 aspect-square md:h-24 rounded-full p-1 relative text-white flex-col items-center gap-2"
-                    >
+                    <div className="flex w-20 bg-accent md:w-24 aspect-square md:h-24 rounded-full p-1 relative  flex-col items-center gap-2">
                       <img
                         className=" pointer-events-none  w-full h-full  rounded-full object-cover"
                         src={team.image}
                         alt={team.name}
                       />
                       <h3
-                        style={{
-                          background: randomColor(),
-                        }}
-                        className={`text-xs font-medium absolute text-black rounded-full px-2 py-1 ${randomDesignationPositionTopBottom()} ${randomDesignationPositionLeftRight()}`}
+                        className={`text-xs bg-accent font-medium absolute text-text rounded-full px-2 py-1 ${randomDesignationPositionTopBottom()} ${randomDesignationPositionLeftRight()}`}
                       >
                         {team?.division}
                       </h3>
@@ -212,7 +204,7 @@ const AnimatedTeamProfiles: React.FC = () => {
                 </PopoverTrigger>
                 <PopoverContent className=" bg-gray-100">
                   <div>
-                    <h3 className="  font-semibold">{team.name}</h3>
+                    <h3 className=" text-gray-900  font-semibold">{team.name}</h3>
                     <h4 className=" text-sm font-medium text-primary">
                       {team.position}
                     </h4>

@@ -28,8 +28,8 @@ const CustomButton = ({
         transition-all duration-300 ease-in-out group 
         ${
           white
-            ? "bg-white text-black  hover:text-white"
-            : "bg-primary border-2 border-primary text-white hover:text-primary"
+            ? "bg-white  text-secondary  hover:text-text"
+            : "bg-primary border-2 border-primary  text-text hover:text-primary"
         }
 
         ${buttonSize[size]}
