@@ -19,8 +19,8 @@ import {
 } from "@/data/ssm";
 import { InfoCard1 } from "@/components/about/about";
 import TablePlans from "@/components/packages-plan/table-plans";
-import SMMCards from "@/components/packages-plan/plan";
 import { smmPackages } from "@/data/package-plans";
+import PlanCards from "@/components/packages-plan/plan";
 
 const SocialMediaMarketingComponent = () => {
   return (
@@ -164,7 +164,7 @@ const SocialMediaMarketingComponent = () => {
 
         <TablePlans plans={smmPackages} />
 
-        <SMMCards plans={smmPackages} />
+        <PlanCards plans={smmPackages} />
       </section>
 
       <GradientMixer />

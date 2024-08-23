@@ -2,7 +2,7 @@ import React from "react";
 import CustomButton from "../shared/button";
 import { CircleCheck, CircleX } from "lucide-react";
 
-const SMMCards = ({ plans }: { plans: any }) => {
+const PlanCards = ({ plans }: { plans: any }) => {
   return (
     <div className="  md:hidden  grid md:grid-cols-3 w-full gap-8 ">
       {plans.map((plan: any, index: number) => (
@@ -54,4 +54,4 @@ const SMMCards = ({ plans }: { plans: any }) => {
   );
 };
 
-export default SMMCards;
+export default PlanCards;

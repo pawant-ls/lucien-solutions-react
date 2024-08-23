@@ -9,13 +9,12 @@ import {
   websitePackages,
 } from "@/data/package-plans";
 import Heading from "../shared/heading";
-import PackageTable from "./package-table";
-import SMMTable from "./table-plans";
+import TablePlans from "./table-plans";
 import CustomButton from "../shared/button";
 import { GradientMixer } from "../home/home";
 import Link from "next/link";
-import SMMCards from "./plan";
-// import SMMTable from "./plan";
+import PlanCards from "./plan";
+// import TablePlans from "./plan";
 
 const PackagesPlanComponent = () => {
   return (
@@ -38,9 +37,9 @@ const PackagesPlanComponent = () => {
           firstLine={["SOCIAL MEDIA MARKETING ", "PACKAGES"]}
           description="Get the most out of your marketing budget with our performance marketing plans."
         />
-        <SMMTable plans={smmPackages} />
+        <TablePlans plans={smmPackages} />
 
-        <SMMCards plans={smmPackages} />
+        <PlanCards plans={smmPackages} />
       </section>
 
       <section id="pm-packages" className=" container">
@@ -48,23 +47,23 @@ const PackagesPlanComponent = () => {
           firstLine={["PERFORMANCE MARKETING ", "PACKAGES"]}
           description="Get the most out of your marketing budget with our performance marketing plans."
         />
-        <SMMTable plans={perfMarketing} />
-        <SMMCards plans={perfMarketing} />
+        <TablePlans plans={perfMarketing} />
+        <PlanCards plans={perfMarketing} />
       </section>
       <section id="website-packages" className=" container">
         <Heading firstLine={["WEBSITE  ", "PACKAGES"]} />
-        <SMMTable plans={websitePackages} />
-        <SMMCards plans={websitePackages} />
+        <TablePlans plans={websitePackages} />
+        <PlanCards plans={websitePackages} />
       </section>
       <section id="email-packages" className=" container">
         <Heading firstLine={["EMAIL MARKETING   ", "PACKAGES"]} />
-        <SMMTable plans={emailPackages} />
-        <SMMCards plans={emailPackages} />
+        <TablePlans plans={emailPackages} />
+        <PlanCards plans={emailPackages} />
       </section>
       <section id="seo-packages" className=" container">
         <Heading firstLine={["SEARCH ENGINE OPTIMIZATION   ", "PACKAGES"]} />
-        <SMMTable plans={seoPackages} />
-        <SMMCards plans={seoPackages} />
+        <TablePlans plans={seoPackages} />
+        <PlanCards plans={seoPackages} />
       </section>
 
       <GradientMixer />
