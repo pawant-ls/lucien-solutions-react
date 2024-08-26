@@ -1,32 +1,27 @@
 import MainBackground from "@/components/shared/main-bg";
 import OurServicesHeroSection from "../shared-hero";
 import Heading from "@/components/shared/heading";
-import {
-  contentOptimizationElements,
-  onPageSeoElements,
-  seoBenefits,
-} from "@/data/our-services/on-page";
+import { technicalSeoData } from "@/data/our-services/technical-seo";
 import { ServiceCard } from "@/components/home/home";
-import { seoProcess } from "@/data/our-services/seo";
 
-const OnPageSeoComponent = () => {
+const TechincalSeoComponent = () => {
   return (
     <MainBackground>
       <OurServicesHeroSection
-        title="ON-PAGE SEO"
-        description="Optimizing your website for search engines and users"
+        title="TECHINAL SEO"
+        description="Enhance your website performance with advanced Technical SEO solutions"
       />
 
       <section className=" text-text container">
         <Heading
-          firstLine={["Factors of On-Page          ", "SEO"]}
-          description="Content is the heart and soul of your online presence! But with so much content out there, how do you make yours stand out? We make it innovative and out-of-the-box! At Lucien Solutions, we don’t believe in a one-size-fits-all approach. We craft unique content, text and multimedia, that attract your visitors, keep them engaged, and ultimately convert them into leads or customers.
+          firstLine={["FACTORS OF TECHNICAL ", "SEO"]}
+          description="Looking to secure the top SEO spot? You need SEO solutions that go beyond the basics. At Lucien Solutions, we deal with complex crawling, indexing, and rendering issues for our clients. Just like our results, our solutions are more than average. With comprehensive technical SEO packages, we address and enhance critical technical SEO factors
 
 "
         />
 
         <div className=" my-20 gap-5  grid md:grid-cols-3">
-          {onPageSeoElements.map((data, index) => (
+          {technicalSeoData.factors.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
@@ -39,10 +34,10 @@ const OnPageSeoComponent = () => {
             />
           ))}
         </div>
-        <Heading firstLine={["WHY YOUR BRAND NEEDS ON-PAGE  ", "SEO"]} />
+        <Heading firstLine={["WHY YOUR BRAND NEEDS  ", "SEO"]} />
 
         <div className=" my-20 gap-5  grid sm:grid-cols-2 md:grid-cols-3">
-          {seoBenefits.map((data, index) => (
+          {technicalSeoData.whyYouNeedTechnicalSeo.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
@@ -55,7 +50,7 @@ const OnPageSeoComponent = () => {
           ))}
         </div>
         <Heading
-          firstLine={["SEARCH ENGINE OPTIMIZATION   ", "PROCESS"]}
+          firstLine={["OUR    ", "PROCESS"]}
           description="We systematically illuminate each page with optimization strategies, ensuring your brand shines brightest at the top.
 
 
@@ -63,7 +58,7 @@ const OnPageSeoComponent = () => {
         />
 
         <div className=" my-20 gap-5  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-          {seoProcess.map((data, index) => (
+          {technicalSeoData.process.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
@@ -76,21 +71,18 @@ const OnPageSeoComponent = () => {
             />
           ))}
         </div>
+        <Heading firstLine={["KEY FOR     ", "SEO SUCCESS"]} />
 
-        <Heading
-          firstLine={["KEY FOR ON-PAGE           ", "SEO SUCCESS"]}
-          description="You can choose a traffic that suits your business"
-        />
-
-        <div className=" my-20 gap-5  grid sm:grid-cols-2 md:grid-cols-3">
-          {contentOptimizationElements.map((data, index) => (
+        <div className=" my-20 gap-5  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+          {technicalSeoData.keyToSuccess.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
               service={{
                 name: data.title,
-
                 icon: data.icon,
+
+                // description: data.,
               }}
             />
           ))}
@@ -100,4 +92,4 @@ const OnPageSeoComponent = () => {
   );
 };
 
-export default OnPageSeoComponent;
+export default TechincalSeoComponent;

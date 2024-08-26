@@ -1,32 +1,33 @@
 import MainBackground from "@/components/shared/main-bg";
 import OurServicesHeroSection from "../shared-hero";
 import Heading from "@/components/shared/heading";
-import {
-  contentOptimizationElements,
-  onPageSeoElements,
-  seoBenefits,
-} from "@/data/our-services/on-page";
+import { technicalSeoData } from "@/data/our-services/technical-seo";
 import { ServiceCard } from "@/components/home/home";
-import { seoProcess } from "@/data/our-services/seo";
+import {
+  keyOffPageSeoSuccess,
+  offPageSeoFactors,
+  whyOffPageSeo,
+} from "@/data/our-services/off-page-seo";
 
-const OnPageSeoComponent = () => {
+const OffPageSeoComponent = () => {
   return (
     <MainBackground>
       <OurServicesHeroSection
-        title="ON-PAGE SEO"
-        description="Optimizing your website for search engines and users"
+        title="OFF-PAGE SEO"
+        description="Boost Your Website Authority & Visibility with Off-Page SEO"
       />
 
       <section className=" text-text container">
         <Heading
-          firstLine={["Factors of On-Page          ", "SEO"]}
-          description="Content is the heart and soul of your online presence! But with so much content out there, how do you make yours stand out? We make it innovative and out-of-the-box! At Lucien Solutions, we don’t believe in a one-size-fits-all approach. We craft unique content, text and multimedia, that attract your visitors, keep them engaged, and ultimately convert them into leads or customers.
+          firstLine={["FACTORS OF TECHNICAL ", "SEO"]}
+          description="Struggling to get your website noticed in search results? Off-page SEO can do the job! At Lucien Solutions, we optimise your website as well as build your website’s authority and credibility in the eyes of search engines. This increases your online presence, brand awareness, and organic traffic, securing your website a higher spot on the search engine rankings
+
 
 "
         />
 
         <div className=" my-20 gap-5  grid md:grid-cols-3">
-          {onPageSeoElements.map((data, index) => (
+          {offPageSeoFactors.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
@@ -39,10 +40,10 @@ const OnPageSeoComponent = () => {
             />
           ))}
         </div>
-        <Heading firstLine={["WHY YOUR BRAND NEEDS ON-PAGE  ", "SEO"]} />
+        <Heading firstLine={["WHY YOUR BRAND NEEDS OFF-PAGE  ", "SEO"]} />
 
         <div className=" my-20 gap-5  grid sm:grid-cols-2 md:grid-cols-3">
-          {seoBenefits.map((data, index) => (
+          {whyOffPageSeo.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
@@ -55,7 +56,7 @@ const OnPageSeoComponent = () => {
           ))}
         </div>
         <Heading
-          firstLine={["SEARCH ENGINE OPTIMIZATION   ", "PROCESS"]}
+          firstLine={["OUR    ", "PROCESS"]}
           description="We systematically illuminate each page with optimization strategies, ensuring your brand shines brightest at the top.
 
 
@@ -63,7 +64,7 @@ const OnPageSeoComponent = () => {
         />
 
         <div className=" my-20 gap-5  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-          {seoProcess.map((data, index) => (
+          {technicalSeoData.process.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
@@ -76,21 +77,18 @@ const OnPageSeoComponent = () => {
             />
           ))}
         </div>
+        <Heading firstLine={["KEY FOR OFF-PAGE    ", "SEO SUCCESS"]} />
 
-        <Heading
-          firstLine={["KEY FOR ON-PAGE           ", "SEO SUCCESS"]}
-          description="You can choose a traffic that suits your business"
-        />
-
-        <div className=" my-20 gap-5  grid sm:grid-cols-2 md:grid-cols-3">
-          {contentOptimizationElements.map((data, index) => (
+        <div className=" my-20 gap-5  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+          {keyOffPageSeoSuccess.map((data, index) => (
             <ServiceCard
               hover={false}
               key={index}
               service={{
                 name: data.title,
-
                 icon: data.icon,
+
+                // description: data.,
               }}
             />
           ))}
@@ -100,4 +98,4 @@ const OnPageSeoComponent = () => {
   );
 };
 
-export default OnPageSeoComponent;
+export default OffPageSeoComponent;

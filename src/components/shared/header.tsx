@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeChanger from "./theme";
+import NestedNavigation from "./mobile-navbar";
 const Header = () => {
   const { isAtTop, isVisible } = useScrollHeader();
   const pathname = usePathname();
@@ -47,7 +48,7 @@ const Header = () => {
         </div>
       </header>
 
-      <motion.div
+      {/* <motion.div
         initial={{ x: "100%" }}
         animate={{ x: isMenuOpen ? 0 : "100%" }}
         transition={{ duration: 0.5 }}
@@ -96,7 +97,9 @@ const Header = () => {
             <span>+91 89287 23457</span>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
+
+      <NestedNavigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </>
   );
 };

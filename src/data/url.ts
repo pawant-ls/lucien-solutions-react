@@ -13,31 +13,31 @@ export const urls = [
     children: [
       {
         name: "Search Engine Optimization",
-        url: "/search-engine-optimization",
+        url: "/our-services/search-engine-optimization",
         children: [
           {
             name: "On Page SEO",
-            url: "/on-page-seo",
+            url: "/our-services/search-engine-optimization/on-page-seo",
           },
           {
             name: "Off Page SEO",
-            url: "/off-page-seo",
+            url: "/our-services/search-engine-optimization/off-page-seo",
           },
           {
             name: "Technical SEO",
-            url: "/technical-seo",
+            url: "/our-services/search-engine-optimization/technical-seo",
           },
           {
             name: "Local SEO",
-            url: "/local-seo",
+            url: "/our-services/search-engine-optimization/local-seo",
           },
           {
             name: "E-commerce SEO",
-            url: "/e-commerce-seo",
+            url: "/our-services/search-engine-optimization/e-commerce-seo",
           },
           {
             name: "International SEO",
-            url: "/international-seo",
+            url: "/our-services/search-engine-optimization/international-seo",
           },
         ],
       },
