@@ -47,31 +47,31 @@ export const urls = [
         children: [
           {
             name: "Instagram",
-            url: "/instagram",
+            url: "/social-media-marketing/instagram",
           },
           {
             name: "Facebook",
-            url: "/facebook",
+            url: "/social-media-marketing/facebook",
           },
           {
             name: "Graphic Design",
-            url: "/graphic-design",
+            url: "/social-media-marketing/graphic-design",
           },
           {
             name: "Linkedin Marketing",
-            url: "/linkedin-marketing",
+            url: "/social-media-marketing/linkedin-marketing",
           },
           {
             name: "Content Marketing",
-            url: "/content-marketing",
+            url: "/social-media-marketing/content-marketing",
           },
           {
             name: "Influencer Marketing",
-            url: "/influencer-marketing",
+            url: "/social-media-marketing/influencer-marketing",
           },
           {
             name: "SMM – Performance Marketing",
-            url: "/smm-performance-marketing",
+            url: "/social-media-marketing/smm-performance-marketing",
           },
         ],
       },

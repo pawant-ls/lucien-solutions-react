@@ -15,11 +15,12 @@ import CustomButton from "../shared/button";
 import { GradientMixer } from "../home/home";
 import Link from "next/link";
 import SMMCards from "./plan";
+import MainBackground from "../shared/main-bg";
 // import SMMTable from "./plan";
 
 const PackagesPlanComponent = () => {
   return (
-    <main className=" pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651]">
+    <MainBackground>
       <section id="" className=" container">
         <Heading
           firstLine={["PLANS & ", "PACKAGES"]}
@@ -66,9 +67,7 @@ const PackagesPlanComponent = () => {
         <SMMTable plans={seoPackages} />
         <SMMCards plans={seoPackages} />
       </section>
-
-      <GradientMixer />
-    </main>
+    </MainBackground>
   );
 };
 

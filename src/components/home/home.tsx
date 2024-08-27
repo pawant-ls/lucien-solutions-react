@@ -135,10 +135,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <MagicCard
-              
-              className=" w-full  border-none bg-black/20 rounded-2xl text-gray-100 p-5 md:p-10"
-            >
+            <MagicCard className=" w-full  border-none bg-white  rounded-2xl text-black dark:bg-accent/20 dark:text-white p-5 md:p-10">
               <div className=" w-full flex flex-col gap-2">
                 <label>First name</label>
 
@@ -167,6 +164,12 @@ const HomePage = () => {
                 <label>Message</label>
 
                 <textarea className=" bg-black/50 rounded-xl p-3 focus:ring-4 " />
+              </div>
+
+              <div>
+                <CustomButton className=" mt-5 w-full">
+                  Send Message
+                </CustomButton>
               </div>
             </MagicCard>
           </div>

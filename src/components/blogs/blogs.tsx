@@ -18,12 +18,12 @@ const BlogsPageComponent = () => {
         />
 
         <div>
-          <div className="flex border border-gray-200  items-center  max-w-xl mx-auto">
+          <div className="flex border border-text/20  items-center  max-w-xl mx-auto">
             <Input
-              className=" bg-background/10 text-white   border-none rounded-none"
+              className=" bg-background/10 text-text   border-none rounded-none"
               type="text"
             />
-            <Button className=" text-white px-5 rounded-none">
+            <Button className=" text-text px-5 rounded-none">
               <Search size={20} />
             </Button>
           </div>
@@ -44,7 +44,7 @@ const BlogsPageComponent = () => {
               alt="influencer"
             />
           </div>
-          <div className=" text-white">
+          <div className=" text-text">
             <h1 className=" text-2xl font-bold ">
               Importance Of Greenfluencers
             </h1>
@@ -68,8 +68,6 @@ const BlogsPageComponent = () => {
           ))}
         </div>
       </section>
-
-      <GradientMixer />
     </MainBackground>
   );
 };

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BlogCard = ({ blog }: { blog: any }) => {
   return (
-    <div className=" group bg-white  rounded-lg text-gray-800">
+    <div className=" group bg-accent/30  rounded-lg text-text">
       <div className=" w-full overflow-hidden p-2">
         <img
           className=" w-full transition-all  group-hover:scale-125 aspect-video object-cover rounded-xl"

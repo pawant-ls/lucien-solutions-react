@@ -7,11 +7,12 @@ import CustomButton from "../shared/button";
 import { MagicCard } from "../magicui/magic-card";
 import WhatOurEmlpoyeesSays from "./what-our-employees";
 import { useRouter } from "next/navigation";
+import MainBackground from "../shared/main-bg";
 
 const CareerComponent = () => {
   const router = useRouter();
   return (
-    <main className=" pt-20  min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651]">
+    <MainBackground>
       <section className=" container">
         <Heading
           firstLine={["START DOING", "WORK THAT MATTERS"]}
@@ -80,9 +81,7 @@ Come be a part of our diversified team!
 
         <WhatOurEmlpoyeesSays />
       </section>
-
-      <GradientMixer />
-    </main>
+    </MainBackground>
   );
 };
 
