@@ -135,13 +135,13 @@ const HomePage = () => {
               </div>
             </div>
 
-            <MagicCard className=" w-full  border-none bg-white  rounded-2xl text-black dark:bg-accent/20 dark:text-white p-5 md:p-10">
-              <div className=" w-full flex flex-col gap-2">
+            <MagicCard className=" w-full  border border-text/10 bg-background   rounded-2xl text-black  dark:text-white p-5 md:p-10">
+              <div className="  w-full flex flex-col gap-2">
                 <label>First name</label>
 
                 <input
                   type="text"
-                  className=" bg-black/50 rounded-xl p-3 focus:ring-4 "
+                  className=" bg-text/10 rounded-xl p-3 focus:ring-4 "
                 />
               </div>
               <div className=" mt-5 flex flex-col gap-2">
@@ -149,7 +149,7 @@ const HomePage = () => {
 
                 <input
                   type="text"
-                  className=" bg-black/50 rounded-xl p-3 focus:ring-4 "
+                  className=" bg-text/10 rounded-xl p-3 focus:ring-4 "
                 />
               </div>
               <div className=" flex mt-5 flex-col gap-2">
@@ -157,17 +157,17 @@ const HomePage = () => {
 
                 <input
                   type="text"
-                  className=" bg-black/50 rounded-xl p-3 focus:ring-4 "
+                  className=" bg-text/10 rounded-xl p-3 focus:ring-4 "
                 />
               </div>
               <div className=" mt-5 flex flex-col gap-2">
                 <label>Message</label>
 
-                <textarea className=" bg-black/50 rounded-xl p-3 focus:ring-4 " />
+                <textarea className=" bg-text/10 rounded-xl p-3 focus:ring-4 " />
               </div>
 
               <div>
-                <CustomButton className=" mt-5 w-full">
+                <CustomButton white={false} className=" mt-10 ">
                   Send Message
                 </CustomButton>
               </div>

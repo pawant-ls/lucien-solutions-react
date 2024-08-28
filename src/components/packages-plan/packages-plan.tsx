@@ -27,10 +27,12 @@ const PackagesPlanComponent = () => {
           "
         />
 
-        <div className=" flex justify-center my-20 flex-wrap gap-5 ">
+        <div className=" flex justify-center my-20 flex-wrap gap-3 ">
           {planCategories.map((item, i) => (
             <a href={`#${item.id}`} key={i}>
-              <CustomButton className="">{item.name}</CustomButton>
+              <div className=" border py-2 rounded-full border-text/20 cursor-pointer text-sm hover:bg-primary transition-all   px-4 ">
+                {item.name}
+              </div>
             </a>
           ))}
         </div>

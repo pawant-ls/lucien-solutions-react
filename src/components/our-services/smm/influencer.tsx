@@ -20,7 +20,7 @@ const InfluencerMarketingComponent = () => {
       />
 
       <section className=" text-text container">
-        <div className=" items-center flex gap-10 ">
+        <div className=" flex-col-reverse  md:flex-row items-center flex gap-10 ">
           <p className=" flex-1">
             Expand your brand’s online visibility and connect with your target
             audience through strategic influencer marketing. By partnering with

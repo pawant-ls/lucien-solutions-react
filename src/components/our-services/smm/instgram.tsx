@@ -18,8 +18,8 @@ const InstagramMarketingComponent = () => {
         description="Tap into the power of Instagram Marketing"
       />
 
-      <section className=" text-text container">
-        <div className=" items-center flex gap-10 ">
+      <section className="  text-text container">
+        <div className=" flex-col-reverse  md:flex-row items-center flex gap-10 ">
           <p className=" flex-1">
             Instagram marketing can help improve your brand awareness with the
             right strategy and plan. It helps you engage with your target

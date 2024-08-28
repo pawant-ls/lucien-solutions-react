@@ -22,7 +22,7 @@ const PerfomanceMarketingComponent = () => {
       />
 
       <section className=" text-text container">
-        <div className=" items-center flex gap-10 ">
+        <div className=" flex-col-reverse  md:flex-row items-center flex gap-10 ">
           <p className=" flex-1">
             Achieve unparalleled results with performance marketing. Our
             data-driven strategies ensure every campaign delivers measurable

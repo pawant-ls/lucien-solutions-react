@@ -15,7 +15,7 @@ const ThemeChanger = () => {
   return (
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hover:bg-gray-300 dark:hover:bg-gray-700 active:scale-95 transform"
+      className="p-2 rounded-full bg-secondary/20 dark:bg-accent/20 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hover:bg-gray-300 dark:hover:bg-gray-700 active:scale-95 transform"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (

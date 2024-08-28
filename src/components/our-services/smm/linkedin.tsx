@@ -20,7 +20,7 @@ const LinkedinMarketingComponent = () => {
       />
 
       <section className=" text-text container">
-        <div className=" items-center flex gap-10 ">
+        <div className=" flex-col-reverse  md:flex-row items-center flex gap-10 ">
           <p className=" flex-1">
             Harness the power of LinkedIn marketing to establish your authority,
             grow your network, and attract high-quality leads. Stand out in the

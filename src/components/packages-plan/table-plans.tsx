@@ -20,17 +20,17 @@ const TablePlans = ({ plans }: { plans: any }) => {
 
   return (
     <div className="overflow-x-auto hidden md:block">
-      <table className="min-w-full  bg-white border border-gray-300">
+      <table className="min-w-full  bg-background border border-text/20">
         <thead>
-          <tr className="bg-gray-100 ">
-            <th className="px-6 py-3 text-left text-sm font-medium  text-gray-700">
+          <tr className="bg-text/10 ">
+            <th className="px-6 py-3 text-left text-sm font-medium  text-text">
               <h2 className=" text-2xl font-bold">FEATURES</h2>
               <p>COMPANY PACKAGE FEATURES</p>
             </th>
             {plans.map((plan: any, index: any) => (
               <th
                 key={index}
-                className="px-6 py-3 text-center text-sm font-medium text-gray-700"
+                className="px-6 py-3 text-center text-sm font-medium text-text"
               >
                 <h3 className=" ">{plan.name}</h3>
                 <p className=" mt-2 text-2xl font-semibold">{plan.price}</p>
@@ -41,14 +41,14 @@ const TablePlans = ({ plans }: { plans: any }) => {
         </thead>
         <tbody>
           {extractFeatureKeys(plans).map((feature: any, index) => (
-            <tr key={index} className="border-t border-gray-200">
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            <tr key={index} className="border-t border-text/10">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-text">
                 {feature}
               </td>
               {plans?.map((plan: any, planIndex: any) => (
                 <td
                   key={planIndex}
-                  className="px-6 py-4 capitalize whitespace-nowrap text-center  text-sm text-gray-500"
+                  className="px-6 py-4 capitalize whitespace-nowrap text-center  text-sm text-text"
                 >
                   {plan.features[feature] !== undefined ? (
                     typeof plan.features[feature] === "boolean" ? (
@@ -67,7 +67,7 @@ const TablePlans = ({ plans }: { plans: any }) => {
               ))}
             </tr>
           ))}
-          <tr className="border-t border-gray-200">
+          <tr className="border-t border-text/10">
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
               Action
             </td>

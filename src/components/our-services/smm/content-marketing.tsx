@@ -20,7 +20,7 @@ const ContentMarketingComponent = () => {
       />
 
       <section className=" text-text container">
-        <div className=" items-center flex gap-10 ">
+        <div className=" flex-col-reverse  md:flex-row items-center flex gap-10 ">
           <p className=" flex-1">
             Content is the King! Period! Content is everything! It encompasses
             the whole situation of the business and thus outperforms simple

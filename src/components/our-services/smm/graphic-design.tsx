@@ -20,7 +20,7 @@ const GraphicDesignMarketingComponent = () => {
       />
 
       <section className=" text-text container">
-        <div className=" items-center flex gap-10 ">
+        <div className=" flex-col-reverse  md:flex-row items-center flex gap-10 ">
           <p className=" flex-1">
             Our unique graphic designs are moving arrangements that communicate
             your vision with the kinds of advancement, creativity and

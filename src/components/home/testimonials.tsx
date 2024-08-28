@@ -19,12 +19,12 @@ const ClientTestimonials = () => {
             <CarouselItem className="   sm:basis-1/2  lg:basis-1/3" key={index}>
               <div
                 key={index}
-                className=" bg-accent/30 p-4   rounded-2xl text-text"
+                className=" bg-background border border-text/10 p-4   rounded-2xl text-text"
               >
                 <div className=" ">
                   <div className="flex items-center gap-5 p-5 bg-accent/50 rounded-xl text-text">
                     <img
-                      className=" w-20 rounded-full border"
+                      className=" w-20 rounded-full "
                       src={testimonial.logo}
                       alt=""
                     />

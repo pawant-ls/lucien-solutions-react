@@ -8,24 +8,24 @@ const PlanCards = ({ plans }: { plans: any }) => {
       {plans.map((plan: any, index: number) => (
         <div
           key={index}
-          className={`w-full  bg-white  rounded-xl shadow-md    transition-transform duration-300 ease-in-out`}
+          className={`w-full  bg-background border-text/10 border  rounded-xl shadow-md    transition-transform duration-300 ease-in-out`}
         >
-          <div className=" text-center rounded-t-xl p-6 bg-primary text-white ">
+          <div className=" text-center rounded-t-xl p-6 bg-primary text-text ">
             <h2 className="text-xl font-semibold mb-4">{plan.name}</h2>
           </div>
 
-          <div className=" p-6 py-3 text-center border-b">
-            <p className="text-gray-800 font-semibold text-xl mb-2">
-              {plan.price}
-            </p>
-            <p className="text-gray-500 ">{plan.billingCycle}</p>
+          <div className=" p-6 py-3 text-center border-b border-text/10">
+            <p className="text-text font-semibold text-xl mb-2">{plan.price}</p>
+            <p className="text-text ">{plan.billingCycle}</p>
           </div>
           <div className=" flex flex-col p-6 ">
             <ul className="mb-4 flex-1">
               {Object.entries(plan.features).map(([feature, value], idx) => (
                 <li key={idx} className="flex  justify-between py-1">
-                  <span className="text-gray-700 flex-1">{feature}</span>
-                  <span className="text-gray-500 ">
+                  <span className="text-text font-semibold flex-1">
+                    {feature}
+                  </span>
+                  <span className="text-text ">
                     {typeof value === "boolean" ? (
                       value ? (
                         <CircleCheck className=" mx-auto" color="#1ba300" />

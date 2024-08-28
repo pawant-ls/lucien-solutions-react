@@ -80,8 +80,8 @@ const ReviewCard = ({
 
 const LogoCard = ({ img, name }: { img: string; name: string }) => {
   return (
-    <div className="flex items-center justify-center w-32 h-32">
-      <img className="w-32 h-32" src={img} alt={name} />
+    <div className="flex h-32  dark:aspect-square aspect-video bg-text dark:bg-transparent rounded-xl  items-center justify-center ">
+      <img className="w-32  h-32" src={img} alt={name} />
     </div>
   );
 };

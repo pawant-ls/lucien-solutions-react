@@ -18,22 +18,25 @@ const BlogsPageComponent = () => {
         />
 
         <div>
-          <div className="flex border border-text/20  items-center  max-w-xl mx-auto">
+          <div className="flex border rounded-full border-text/20  items-center  max-w-xl mx-auto">
             <Input
-              className=" bg-background/10 text-text   border-none rounded-none"
+              className=" bg-background/10 text-text   border-none rounded-l-full"
               type="text"
             />
-            <Button className=" text-text px-5 rounded-none">
+            <Button className=" text-text px-5 rounded-r-full">
               <Search size={20} />
             </Button>
           </div>
         </div>
 
-        <div className=" my-10 flex flex-wrap gap-2">
+        <div className=" mt-12 my-10 flex flex-wrap gap-2">
           {categories.map((category, index) => (
-            <CustomButton key={index} className=" px-5 ">
+            <div
+              key={index}
+              className=" border py-2 rounded-full border-text/20 cursor-pointer text-sm hover:bg-primary transition-all   px-4 "
+            >
               {category.name}
-            </CustomButton>
+            </div>
           ))}
         </div>
         <div className=" my-20 flex-col md:flex-row flex gap-10">
