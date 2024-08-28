@@ -31,7 +31,7 @@ const WordpressComponent = () => {
 
 
 "
-          secondLine="We use the latest technologies and follow the best trends & practices to deliver high-quality, scalable, and secure WordPress solutions. With our centre focus on user satisfaction, we build personalised experiences to meet the unique needs of niche businesses across industries. We couple our cost-effective solutions with innovative ideas to cater to WordPress development services globally."
+          thirdLine="We use the latest technologies and follow the best trends & practices to deliver high-quality, scalable, and secure WordPress solutions. With our centre focus on user satisfaction, we build personalised experiences to meet the unique needs of niche businesses across industries. We couple our cost-effective solutions with innovative ideas to cater to WordPress development services globally."
         />
 
         <div className=" my-20 gap-5  grid md:grid-cols-3">
