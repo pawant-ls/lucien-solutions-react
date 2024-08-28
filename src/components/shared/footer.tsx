@@ -9,6 +9,7 @@ import Logo from "./logo";
 import { policies, urls } from "@/data/url";
 import { Mail, Phone } from "lucide-react";
 import ThemeChanger from "./theme";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -38,7 +39,9 @@ const Footer = () => {
             <div>
               <ul className="  lg:justify-end gap-5 flex flex-wrap">
                 {urls.map((url, index) => (
-                  <li key={index}>{url.name}</li>
+                  <Link href={url.url} key={index}>
+                    {url.name}
+                  </Link>
                 ))}
               </ul>
             </div>
@@ -60,7 +63,9 @@ const Footer = () => {
             <div>
               <ul className="  lg:justify-end gap-5 flex flex-wrap">
                 {policies.map((url, index) => (
-                  <li key={index}>{url.name}</li>
+                  <Link href={url.url} key={index}>
+                    {url.name}
+                  </Link>
                 ))}
               </ul>
             </div>
