@@ -21,30 +21,17 @@ import { InfoCard1 } from "@/components/about/about";
 import TablePlans from "@/components/packages-plan/table-plans";
 import { smmPackages } from "@/data/package-plans";
 import PlanCards from "@/components/packages-plan/plan";
+import OurServicesHeroSection from "../shared-hero";
 
 const SocialMediaMarketingComponent = () => {
   return (
     <MainBackground>
-      <section className="  container">
-        <main className=" min-h-80 bg-transparent  sm:-mt-40">
-          <Spline scene="https://prod.spline.design/gNl7F4Fp8CJyOmOZ/scene.splinecode" />
-        </main>{" "}
-        <div className=" md:-mt-20">
-          <OurServicesHeading
-            title="Social Media Marketing "
-            description="Transform your Brand with Tailored Social Media Campaigns for Data-Driven Marketing Solutions"
-          />
-        </div>
-        <div>
-          <div className=" my-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
-            {contactUsData.map((data, index) => (
-              <NumbersCard key={index} data={data} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <OurServicesHeroSection
+        title="SOCIAL MEDIA MARKETING"
+        description="Transform your Brand with Tailored Social Media Campaigns for Data-Driven Marketing Solutions"
+      />
 
-      <section className=" text-white container">
+      <section className=" text-text container">
         <div className=" flex flex-col gap-5 my-20 items-center justify-center">
           <h4 className="   text-xl font-semibold">
             Crafting your brand’s most effective social media marketing
@@ -167,7 +154,7 @@ const SocialMediaMarketingComponent = () => {
         <PlanCards plans={smmPackages} />
       </section>
 
-      <GradientMixer />
+      {/* <GradientMixer /> */}
     </MainBackground>
   );
 };

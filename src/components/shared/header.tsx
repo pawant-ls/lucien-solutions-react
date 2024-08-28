@@ -8,6 +8,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeChanger from "./theme";
+import NestedNavigation from "./mobile-navbar";
 const Header = () => {
   const { isAtTop, isVisible } = useScrollHeader();
   const pathname = usePathname();
@@ -20,36 +22,37 @@ const Header = () => {
   return (
     <>
       <header
-        className={`  z-[10000] transition-all   fixed inset-x-0    ${
+        className={`  z-[10000] transition-all   fixed inset-x-0 border-b py-2 lg:py-1  border-text/10  ${
           isAtTop
-            ? "md:backdrop-blur-md text-white md:bg-black/10 py-2 lg:py-2"
-            : " bg-white text-black py-2"
+            ? "md:backdrop-blur-md  bg-background  text-text "
+            : "  bg-background text-text  border-b"
         } `}
       >
         <div className="flex container items-center justify-between ">
           <div className=" w-32">
-            <Logo white={isAtTop ? true : false} />
+            <Logo white={false} />
           </div>
 
           <ModernNavigation urls={urls} />
 
-          <div className=" hidden lg:block">
+          <div className=" lg:flex  items-center gap-4  hidden ">
             <CustomButton white={isAtTop ? true : false}>
               Contact Us
             </CustomButton>
+            <ThemeChanger />
           </div>
 
-          <div className="  cursor-pointer lg:hidden">
+          <div className=" flex  items-center gap-4 cursor-pointer lg:hidden">
             <MenuIcon onClick={() => setIsMenuOpen(true)} size={25} />
           </div>
         </div>
       </header>
 
-      <motion.div
+      {/* <motion.div
         initial={{ x: "100%" }}
         animate={{ x: isMenuOpen ? 0 : "100%" }}
         transition={{ duration: 0.5 }}
-        className=" z-[10000000] lg:hidden bg-white fixed inset-y-0 right-0 p-5 text-gray-800 "
+        className=" z-[10000000] lg:hidden bg-background border-l border-text/10 fixed inset-y-0 right-0 p-5 text-gray-800 "
       >
         <div className=" flex items-center justify-between">
           <div className=" w-28">
@@ -60,8 +63,11 @@ const Header = () => {
             <X size={25} />
           </div>
         </div>
+        <div className=" mt-5">
+          <ThemeChanger />
+        </div>
         <nav onClick={() => setIsMenuOpen(false)} className=" mt-10  ">
-          <ul className=" space-y-3 ">
+          <ul className=" text-text space-y-3 ">
             {urls.map((url, index) => (
               <li
                 className={` ${
@@ -75,23 +81,25 @@ const Header = () => {
           </ul>
         </nav>
 
-        <div className=" my-5 w-full ">
+        <div className="  my-5 w-full ">
           <CustomButton size="sm" white={false}>
             Contact Us
           </CustomButton>
         </div>
 
         <div>
-          <div className=" flex items-center gap-2 ">
+          <div className=" text-text flex items-center gap-2 ">
             <Mail size={20} />
             <span>hello@luciensolutions.com</span>
           </div>
-          <div className=" mt-3 flex items-center gap-2 ">
+          <div className="text-text mt-3 flex items-center gap-2 ">
             <Phone size={20} />
             <span>+91 89287 23457</span>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
+
+      <NestedNavigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </>
   );
 };

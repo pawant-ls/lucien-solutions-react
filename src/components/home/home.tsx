@@ -22,6 +22,7 @@ import Marquee from "../magicui/marquee";
 import Slider from "react-slick";
 import ClientTestimonials from "./testimonials";
 import Blogs from "./blogs";
+import MainBackground from "../shared/main-bg";
 
 const HomePage = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -92,7 +93,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className=" overflow-x-hidden min-h-screen bg-gradient-to-b   from-[#070A15] to-[#3F1651] ">
+      <MainBackground>
         <div className=" container">
           <ClientMarquee />
 
@@ -134,10 +135,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <MagicCard
-              gradientColor="#3C176C"
-              className=" w-full  border-none bg-black/20 rounded-2xl text-gray-100 p-5 md:p-10"
-            >
+            <MagicCard className=" w-full  border-none bg-white  rounded-2xl text-black dark:bg-accent/20 dark:text-white p-5 md:p-10">
               <div className=" w-full flex flex-col gap-2">
                 <label>First name</label>
 
@@ -167,6 +165,12 @@ const HomePage = () => {
 
                 <textarea className=" bg-black/50 rounded-xl p-3 focus:ring-4 " />
               </div>
+
+              <div>
+                <CustomButton className=" mt-5 w-full">
+                  Send Message
+                </CustomButton>
+              </div>
             </MagicCard>
           </div>
 
@@ -185,8 +189,8 @@ const HomePage = () => {
             <Blogs />
           </div>
         </div>
-      </section>
-      <GradientMixer />
+      </MainBackground>
+      {/* <GradientMixer /> */}
     </main>
   );
 };
@@ -234,9 +238,9 @@ export const ServiceCard = ({
   };
 
   return (
-    <MagicCard gradientColor="#3C176C" className=" bg-transparent border-none ">
+    <MagicCard>
       <div
-        className={`text-white group overflow-hidden  min-h-[250px] flex justify-center items-center flex-col    relative border-none cursor-pointer text-center bg-black/40 p-5 rounded-2xl ${className}`}
+        className={`text-text group overflow-hidden  min-h-[250px] flex justify-center items-center flex-col    relative border-none cursor-pointer text-center  p-5 rounded-2xl ${className}`}
       >
         <motion.div
           variants={contentVariants}

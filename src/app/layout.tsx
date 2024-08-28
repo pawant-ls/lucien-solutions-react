@@ -1,3 +1,5 @@
+import { ThemeProvider } from "next-themes";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,12 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=" ">
-        <PageTransition>
-          <Header />
-          {children}
-          <Footer />
-        </PageTransition>
+      <body>
+        <ThemeProvider defaultTheme="light" attribute="class">
+          <PageTransition>
+            <Header />
+            {children}
+            <Footer />
+          </PageTransition>
+        </ThemeProvider>
       </body>
     </html>
   );

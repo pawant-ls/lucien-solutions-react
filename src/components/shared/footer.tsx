@@ -8,10 +8,11 @@ import {
 import Logo from "./logo";
 import { policies, urls } from "@/data/url";
 import { Mail, Phone } from "lucide-react";
+import ThemeChanger from "./theme";
 
 const Footer = () => {
   return (
-    <footer className="  bg-[#040414]  py-10 text-gray-100 ">
+    <footer className=" border-t border-text/10  bg-background  py-10 text-text ">
       <section className=" container">
         <div className=" grid lg:grid-cols-2 gap-5">
           <div className=" grid gap-5">
@@ -33,7 +34,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className=" lg:pl-10 mt-10 lg:mt-0 lg:border-l font-medium grid gap-10 lg:text-right">
+          <div className=" lg:pl-10 mt-10 lg:mt-0 lg:border-l border-text/10 font-medium grid gap-10 lg:text-right">
             <div>
               <ul className="  lg:justify-end gap-5 flex flex-wrap">
                 {urls.map((url, index) => (

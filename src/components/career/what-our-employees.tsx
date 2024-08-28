@@ -17,7 +17,7 @@ const WhatOurEmlpoyeesSays = () => {
           <CarouselItem className="   sm:basis-1/2  lg:basis-1/3" key={index}>
             <MagicCard
               key={index}
-              className=" w-full h-full flex flex-col items-center justify-between text-white bg-black/20 border-none p-5 rounded-2xl "
+              className=" w-full h-full flex flex-col items-center justify-between text-text  border-none p-5 rounded-2xl "
             >
               <div className=" flex flex-col justify-between h-full">
                 <p title={testimonial.testimonial} className=" line-clamp-4 ">
@@ -33,7 +33,7 @@ const WhatOurEmlpoyeesSays = () => {
                     />
                   </div>
                   <div>
-                    <h3 className=" text-white text-base font-bold">
+                    <h3 className=" text-text text-base font-bold">
                       {testimonial.name}
                     </h3>
                     <p className=" font-medium text-sm text-primary">

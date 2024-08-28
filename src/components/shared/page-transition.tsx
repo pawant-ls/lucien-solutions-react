@@ -44,7 +44,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
               zIndex: 999999,
               transformOrigin: "top bottom",
             }}
-            className=" bg-[#E33F38] rounded-full"
+            className=" bg-primary rounded-full"
           />
         )}
       </AnimatePresence>
