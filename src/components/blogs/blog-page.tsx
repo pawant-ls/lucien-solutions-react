@@ -13,8 +13,8 @@ const BlogPage = () => {
           backgroundImage: `url('/images/influencer.webp')`,
         }}
       >
-        <div className=" bg-black/50 p-10 text-white absolute inset-x-0 bottom-0">
-          <div className=" flex justify-between items-center container mx-auto ">
+        <div className=" bg-black/50 py-10 text-white absolute inset-x-0 bottom-0">
+          <div className=" flex flex-col lg:flex-row  justify-between lg:items-center container mx-auto ">
             <h2 className=" text-3xl font-medium">
               IMPORTANCE OF GREENFLUENCERS{" "}
             </h2>
