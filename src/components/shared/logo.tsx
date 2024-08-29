@@ -4,15 +4,15 @@ const Logo = ({ white = true }: { white?: boolean }) => {
   return (
     <Link href="/" className=" w-full">
       <img
-        className=" w-32 hidden dark:block"
+        className=" w-32 "
         src={"/images/logo/lucien-solutions-white-logo.webp"}
         alt="logo"
       />
-      <img
+      {/* <img
         className=" w-32 block dark:hidden"
         src={"/images/logo/lucien-Solutions-black-text.webp"}
         alt="logo"
-      />
+      /> */}
     </Link>
   );
 };

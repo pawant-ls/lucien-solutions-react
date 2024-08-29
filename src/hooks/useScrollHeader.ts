@@ -1,16 +1,18 @@
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const useScrollHeader = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
       // Check if we're at the top of the page
-      setIsAtTop(currentScrollPos === 0);
+      setIsAtTop(currentScrollPos === 0 && pathname === "/");
 
       // Determine scroll direction and visibility
       if (currentScrollPos > prevScrollPos) {

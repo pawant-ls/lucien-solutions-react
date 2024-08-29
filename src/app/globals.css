@@ -25,23 +25,6 @@
   }
 }
 
-/* @layer base {
-  :root {
-    --text: 0 0% 9%;
-    --background: 0 0% 95%;
-    --primary: 96 68% 28%;
-    --secondary: 96 79% 68%;
-    --accent: 96 90% 48%;
-  }
-  .dark {
-    --text: 0 0% 91%;
-    --background: 0 0% 5%;
-    --primary: 96 68% 72%;
-    --secondary: 96 79% 32%;
-    --accent: 96 90% 52%;
-  }
-} */
-
 body {
   /* font-family: "Raleway", sans-serif; */
   /* font-family: "Poppins", sans-serif; */

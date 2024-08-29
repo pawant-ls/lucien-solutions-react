@@ -24,7 +24,7 @@ const Header = () => {
       <header
         className={`  z-[10000] transition-all   fixed inset-x-0 border-b py-2 lg:py-1  border-text/10  ${
           isAtTop
-            ? "md:backdrop-blur-md  bg-background  text-text "
+            ? "md:backdrop-blur-md  bg-transparent   text-white "
             : "  bg-background text-text  border-b"
         } `}
       >
@@ -36,9 +36,7 @@ const Header = () => {
           <ModernNavigation urls={urls} />
 
           <div className=" lg:flex  items-center gap-4  hidden ">
-            <CustomButton white={isAtTop ? true : false}>
-              Contact Us
-            </CustomButton>
+            <CustomButton>Contact Us</CustomButton>
             <ThemeChanger />
           </div>
 

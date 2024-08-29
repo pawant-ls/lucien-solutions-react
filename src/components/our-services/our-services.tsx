@@ -28,8 +28,6 @@ const OurServicesComponent = () => {
           ))}
         </div>
       </section>
-
-      <GradientMixer />
     </MainBackground>
   );
 };
