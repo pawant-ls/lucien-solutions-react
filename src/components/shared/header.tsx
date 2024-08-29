@@ -108,7 +108,7 @@ const ModernNavigation = ({ urls }: { urls: any }) => {
   const pathname = usePathname();
   return (
     <nav className="hidden lg:block ">
-      <div className="container mx-auto px-4">
+      <div className="container  mx-auto px-4">
         <ul className="flex items-center justify-center space-x-1">
           {urls.map(
             (
@@ -148,7 +148,7 @@ const ModernNavigation = ({ urls }: { urls: any }) => {
                   <ul className="absolute left-0 mt-1 w-48  bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out">
                     {url.children.map((child, childIndex) => (
                       <li key={childIndex} className="group/child relative">
-                        <a
+                        <Link
                           href={child.url}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors duration-200"
                         >
@@ -156,17 +156,17 @@ const ModernNavigation = ({ urls }: { urls: any }) => {
                           {child?.children && (
                             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 transition-transform duration-300 group-hover/child:rotate-[-90deg]" />
                           )}
-                        </a>
+                        </Link>
                         {child?.children && (
                           <ul className="absolute left-full top-0 w-48  bg-white shadow-lg opacity-0 invisible group-hover/child:opacity-100 group-hover/child:visible transition-all duration-300 ease-in-out">
                             {child.children.map((subChild, subChildIndex) => (
                               <li key={subChildIndex}>
-                                <a
+                                <Link
                                   href={subChild.url}
                                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors duration-200"
                                 >
                                   {subChild.name}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>

@@ -72,9 +72,9 @@ const HomePage = () => {
         <div className="container">
           <div className=" text-gray-200 max-w-xl">
             <BoxReveal boxColor={"transparent"} duration={1}>
-              <h1 className=" text-3xl md:text-4xl lg:text-5xl font-bold ">
+              <h2 className=" text-3xl md:text-4xl lg:text-5xl font-bold ">
                 Your Digital Lighthouse in the Sea Of Success
-              </h1>
+              </h2>
             </BoxReveal>
             <BoxReveal boxColor={"transparent"} duration={1.3}>
               <p className=" mt-5 md:mt-10 md:text-xl">
@@ -198,10 +198,10 @@ const HomePage = () => {
 export const NumbersCard = ({ data }: { data: any }) => {
   return (
     <div className=" text-gray-800 text-center bg-white p-10 rounded-2xl ">
-      <h1 className=" text-4xl flex items-center justify-center font-semibold   ">
+      <h2 className=" text-4xl flex items-center justify-center font-semibold   ">
         <NumberTicker value={data.count} />{" "}
         {data.addPlus && <Plus className=" text-primary font-bold" />}
-      </h1>
+      </h2>
 
       <p className=" mt-3">{data.text}</p>
     </div>
@@ -250,7 +250,7 @@ export const ServiceCard = ({
         >
           <FontAwesomeIcon className="text-4xl mb-3" icon={service.icon} />
         </motion.div>
-        <motion.h1
+        <motion.h2
           className="text-2xl font-semibold"
           variants={contentVariants}
           initial="hidden"
@@ -258,7 +258,7 @@ export const ServiceCard = ({
           custom={1}
         >
           {service.name}
-        </motion.h1>
+        </motion.h2>
         {service.description && (
           <div
             className={`z-10  justify-center items-center ${

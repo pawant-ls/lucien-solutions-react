@@ -72,7 +72,7 @@ const NestedNavigation = ({
       initial={{ x: "100%" }}
       animate={{ x: isMenuOpen ? 0 : "100%" }}
       transition={{ duration: 0.5 }}
-      className="z-[10000000] lg:hidden w-[370px] bg-background border-l border-text/10 fixed inset-y-0 right-0 p-5 text-gray-800 overflow-y-auto"
+      className="z-[10000000] lg:hidden w-[350px] bg-background border-l border-text/10 fixed inset-y-0 right-0 p-5 text-gray-800 overflow-y-auto"
     >
       <div className="flex items-center justify-between">
         <div className="w-28">
