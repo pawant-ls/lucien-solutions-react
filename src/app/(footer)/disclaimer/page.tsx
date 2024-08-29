@@ -5,7 +5,10 @@ import {
   shippingAndDeliveryPolicy,
   termsAndConditions,
 } from "@/data/footer-pages";
-
+import { metaTagsGenerator } from "@/lib/seo";
+export const metadata = metaTagsGenerator({
+  title: "Disclaimer | Lucien Solutions",
+});
 const DisclaimerPage = () => {
   return <FooterPages heading="Disclaimer" content={disclaimer} />;
 };
