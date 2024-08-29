@@ -11,8 +11,8 @@ const useScrollHeader = () => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
-      // Check if we're at the top of the page
-      setIsAtTop(currentScrollPos === 0 && pathname === "/");
+      // Check if we're at the top of the page AND on the homepage
+      setIsAtTop(currentScrollPos < 100 && pathname === "/");
 
       // Determine scroll direction and visibility
       if (currentScrollPos > prevScrollPos) {
@@ -26,10 +26,13 @@ const useScrollHeader = () => {
       setPrevScrollPos(currentScrollPos);
     };
 
+    // Initial check when the component mounts or pathname changes
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+  }, [prevScrollPos, pathname]);
 
   return { isVisible, isAtTop };
 };
