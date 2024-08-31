@@ -14,8 +14,15 @@ import { smmPackages, websitePackages } from "@/data/package-plans";
 import TablePlans from "../packages-plan/table-plans";
 import PlanCards from "../packages-plan/plan";
 import { ppcAdvertisingData } from "@/data/our-services/ppc";
+import { IPlan } from "../packages-plan/packages-plan";
 
-const PayPerClickComponent = () => {
+const PayPerClickComponent = ({
+  data,
+}: {
+  data: {
+    socialMediaMarketing: IPlan[];
+  };
+}) => {
   return (
     <MainBackground>
       <OurServicesHeroSection
@@ -92,8 +99,8 @@ const PayPerClickComponent = () => {
         />
 
         <div className=" my-20 ">
-          <TablePlans plans={smmPackages} />
-          <PlanCards plans={smmPackages} />
+          <TablePlans plans={data.socialMediaMarketing} />
+          <PlanCards plans={data.socialMediaMarketing} />
         </div>
 
         <Heading firstLine={["KEY FOR SUCCESS IN PPC      ", " ADVERTISING"]} />

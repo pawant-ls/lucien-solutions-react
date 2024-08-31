@@ -13,8 +13,15 @@ import { wordpressWebsiteData } from "@/data/our-services/wordpress";
 import { websitePackages } from "@/data/package-plans";
 import TablePlans from "../packages-plan/table-plans";
 import PlanCards from "../packages-plan/plan";
+import { IPlan } from "../packages-plan/packages-plan";
 
-const WordpressComponent = () => {
+const WordpressComponent = ({
+  data,
+}: {
+  data: {
+    websiteDevelopment: IPlan[];
+  };
+}) => {
   return (
     <MainBackground>
       <OurServicesHeroSection
@@ -71,8 +78,8 @@ const WordpressComponent = () => {
         />
 
         <div className=" my-20 ">
-          <TablePlans plans={websitePackages} />
-          <PlanCards plans={websitePackages} />
+          <TablePlans plans={data.websiteDevelopment} />
+          <PlanCards plans={data.websiteDevelopment} />
         </div>
 
         <Heading firstLine={["OUR     ", " PROCESS"]} />

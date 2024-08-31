@@ -17,7 +17,7 @@ import PlanCards from "./plan";
 import MainBackground from "../shared/main-bg";
 // import TablePlans from "./plan";
 
-interface IPlan {
+export interface IPlan {
   name: string;
   price: string;
   billingCycle: string;

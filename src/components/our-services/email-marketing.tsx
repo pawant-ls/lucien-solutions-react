@@ -7,8 +7,15 @@ import { ServiceCard } from "../home/home";
 import TablePlans from "../packages-plan/table-plans";
 import PlanCards from "../packages-plan/plan";
 import { emailPackages } from "@/data/package-plans";
+import { IPlan } from "../packages-plan/packages-plan";
 
-const EmailMarketing = () => {
+const EmailMarketing = ({
+  data,
+}: {
+  data: {
+    emailMarketing: IPlan[];
+  };
+}) => {
   return (
     <MainBackground>
       <OurServicesHeroSection
@@ -100,8 +107,8 @@ const EmailMarketing = () => {
         />
 
         <div className=" my-20 ">
-          <TablePlans plans={emailPackages} />
-          <PlanCards plans={emailPackages} />
+          <TablePlans plans={data?.emailMarketing} />
+          <PlanCards plans={data?.emailMarketing} />
         </div>
       </section>
     </MainBackground>

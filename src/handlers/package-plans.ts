@@ -19,10 +19,17 @@ export const packagePlanData = async () => {
   }
 };
 
-export const jobData = async (id: string) => {
+export const singlePackagePlan = async (
+  name:
+    | "emailMarketing"
+    | "searchEngineOptimization"
+    | "websiteDevelopment"
+    | "socialMediaMarketing"
+    | "perfomanceMarketing"
+) => {
   try {
     const res = await axios.get(
-      `${STRAPI_URL}/api/career?populate[jobs][filters][jobId][$eq]=${id}`,
+      `${STRAPI_URL}/api/packages-and-plan?populate=${name}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
@@ -30,7 +37,7 @@ export const jobData = async (id: string) => {
       }
     );
 
-    return res.data.data.attributes.jobs[0];
+    return res.data.data.attributes;
   } catch (error) {
     console.error(error);
     return null;

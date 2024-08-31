@@ -12,8 +12,15 @@ import {
   seoProcess,
   seoStrategies,
 } from "@/data/our-services/seo";
+import { IPlan } from "@/components/packages-plan/packages-plan";
 
-const SearchEngineOptimizationComponent = () => {
+const SearchEngineOptimizationComponent = ({
+  data,
+}: {
+  data: {
+    searchEngineOptimization: IPlan[];
+  };
+}) => {
   return (
     <MainBackground>
       <OurServicesHeroSection
@@ -85,9 +92,9 @@ Your brand’s digital potential is more than you think! Discover its real poten
           description="You can choose a traffic that suits your business"
         />
 
-        <TablePlans plans={seoPackages} />
+        <TablePlans plans={data?.searchEngineOptimization} />
 
-        <SMMCards plans={seoPackages} />
+        <SMMCards plans={data?.searchEngineOptimization} />
       </section>
     </MainBackground>
   );

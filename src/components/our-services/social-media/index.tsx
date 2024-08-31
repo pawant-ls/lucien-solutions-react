@@ -22,8 +22,15 @@ import TablePlans from "@/components/packages-plan/table-plans";
 import { smmPackages } from "@/data/package-plans";
 import PlanCards from "@/components/packages-plan/plan";
 import OurServicesHeroSection from "../shared-hero";
+import { IPlan } from "@/components/packages-plan/packages-plan";
 
-const SocialMediaMarketingComponent = () => {
+const SocialMediaMarketingComponent = ({
+  data,
+}: {
+  data: {
+    socialMediaMarketing: IPlan[];
+  };
+}) => {
   return (
     <MainBackground>
       <OurServicesHeroSection
@@ -149,9 +156,9 @@ const SocialMediaMarketingComponent = () => {
         </div>
         <Heading firstLine={["TARIFF           ", "PLANS"]} />
 
-        <TablePlans plans={smmPackages} />
+        <TablePlans plans={data.socialMediaMarketing} />
 
-        <PlanCards plans={smmPackages} />
+        <PlanCards plans={data.socialMediaMarketing} />
       </section>
 
       {/* <GradientMixer /> */}
