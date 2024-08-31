@@ -8,8 +8,10 @@ import { MagicCard } from "../magicui/magic-card";
 import WhatOurEmlpoyeesSays from "./what-our-employees";
 import { useRouter } from "next/navigation";
 import MainBackground from "../shared/main-bg";
+import Link from "next/link";
 
-const CareerComponent = () => {
+const CareerComponent = ({ data }: { data: any }) => {
+  console.log(data);
   const router = useRouter();
   return (
     <MainBackground>
@@ -51,28 +53,36 @@ Come be a part of our diversified team!
 "
         />
         <div className="  grid md:grid-cols-2 gap-5 ">
-          {openings.map((opening, i) => (
-            <div className=" p-5 rounded-xl  bg-white ">
-              <h3 className=" text-gray-800 text-xl font-semibold ">
-                {opening.title}
-              </h3>
+          {data?.jobs?.map(
+            (
+              opening: {
+                title: string;
+                description: string;
+                location: string;
+                jobId: string;
+              },
+              i: number
+            ) => (
+              <div className=" p-5 rounded-xl  bg-white ">
+                <h3 className=" text-gray-800 text-xl font-semibold ">
+                  {opening.title}
+                </h3>
 
-              <p className=" mt-2 font-medium text-gray-700">
-                {opening.description}
-              </p>
+                <p className=" mt-2 font-medium text-gray-700">
+                  {opening.description}
+                </p>
 
-              <div className=" mt-5 flex-col flex-start sm:flex-row gap-5 flex sm:items-center sm:justify-between">
-                <p>{opening.location}</p>
-                <CustomButton
-                  onClick={() => router.push(`/jobs/test-job`)}
-                  size="round"
-                  white={false}
-                >
-                  Apply now
-                </CustomButton>
+                <div className=" mt-5 flex-col flex-start sm:flex-row gap-5 flex sm:items-center sm:justify-between">
+                  <p>{opening.location}</p>
+                  <Link href={`/jobs/${opening.jobId}`}>
+                    <CustomButton size="round" white={false}>
+                      Apply now
+                    </CustomButton>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </section>
 

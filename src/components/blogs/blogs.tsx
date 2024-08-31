@@ -1,3 +1,4 @@
+"use client";
 import { Search } from "lucide-react";
 import Heading from "../shared/heading";
 import MainBackground from "../shared/main-bg";
@@ -7,8 +8,27 @@ import { blogPosts, categories } from "@/data/blogs";
 import CustomButton from "../shared/button";
 import BlogCard from "./card";
 import { GradientMixer } from "../home/home";
-
-const BlogsPageComponent = () => {
+export interface IBlog {
+  id: number;
+  title: string;
+  description: string;
+  content: string;
+  author: {
+    name: string;
+    profile: any;
+  };
+  uploadedDate: string;
+  blogId: string;
+  image: any;
+}
+const BlogsPageComponent = ({
+  data,
+}: {
+  data: {
+    blogs: IBlog[];
+  };
+}) => {
+  console.log(data);
   return (
     <MainBackground>
       <section className=" container">
@@ -66,8 +86,8 @@ const BlogsPageComponent = () => {
           </div>
         </div>
         <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
-          {blogPosts.map((blog, index) => (
-            <BlogCard key={index} blog={blog} />
+          {data?.blogs?.map((blog, index) => (
+            <BlogCard key={blog.id} blog={blog} />
           ))}
         </div>
       </section>

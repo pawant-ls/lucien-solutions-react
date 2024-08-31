@@ -3,25 +3,25 @@ import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import MainBackground from "../shared/main-bg";
 import { sampleBlogMd } from "@/data/blogs";
+import { IBlog } from "./blogs";
+import { getImageUrl } from "@/utils/image";
 
-const BlogPage = () => {
+const BlogPage = ({ data }: { data: IBlog }) => {
   return (
     <MainBackground>
       <div
         className=" relative h-[80vh] w-full bg-cover bg-center"
         style={{
-          backgroundImage: `url('/images/influencer.webp')`,
+          backgroundImage: `url(${getImageUrl(data.image) as string})`,
         }}
       >
         <div className=" bg-black/50 py-10 text-white absolute inset-x-0 bottom-0">
           <div className=" flex flex-col lg:flex-row  justify-between lg:items-center container mx-auto ">
-            <h2 className=" text-3xl font-medium">
-              IMPORTANCE OF GREENFLUENCERS{" "}
-            </h2>
+            <h2 className=" text-3xl font-medium">{data?.title}</h2>
 
             <div>
               <div>
-                <p>June 15, 2024</p>
+                <p>{data.uploadedDate}</p>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ const BlogPage = () => {
                   ),
               }}
             >
-              {sampleBlogMd}
+              {data?.content}
             </ReactMarkdown>
           </div>
         </div>

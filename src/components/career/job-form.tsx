@@ -22,15 +22,15 @@ const JobApplicationForm = () => {
   };
 
   return (
-    <div className="bg-transparent border-4 rounded-xl py-8 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl text-white font-bold mb-6">
+    <div className=" bg-background border-4 rounded-xl py-8 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-2xl text-text font-bold mb-6">
         Apply for this position
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label
             htmlFor="fullName"
-            className="block font-medium text-gray-100 mb-2"
+            className="block font-medium text-text/90 mb-2"
           >
             Full Name *
           </label>
@@ -40,13 +40,13 @@ const JobApplicationForm = () => {
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
-            className="w-full backdrop-blur-sm p-3 text-white rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
+            className="w-full backdrop-blur-sm p-3 text-text rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
           />
         </div>
         <div>
           <label
             htmlFor="email"
-            className="block font-medium text-gray-100 mb-2"
+            className="block font-medium text-text/90 mb-2"
           >
             Email *
           </label>
@@ -56,13 +56,13 @@ const JobApplicationForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full backdrop-blur-sm p-3 text-white rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
+            className="w-full backdrop-blur-sm p-3 text-text rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
           />
         </div>
         <div>
           <label
             htmlFor="phone"
-            className="block font-medium text-gray-100 mb-2"
+            className="block font-medium text-text/90 mb-2"
           >
             Phone *
           </label>
@@ -72,13 +72,13 @@ const JobApplicationForm = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
-            className="w-full backdrop-blur-sm p-3 text-white rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
+            className="w-full backdrop-blur-sm p-3 text-text rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
           />
         </div>
         <div>
           <label
             htmlFor="coverLetter"
-            className="block font-medium text-gray-100 mb-2"
+            className="block font-medium text-text/90 mb-2"
           >
             Cover Letter *
           </label>
@@ -87,14 +87,11 @@ const JobApplicationForm = () => {
             value={coverLetter}
             onChange={(e) => setCoverLetter(e.target.value)}
             required
-            className="w-full backdrop-blur-sm p-3 text-white rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
+            className="w-full backdrop-blur-sm p-3 text-text rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
           ></textarea>
         </div>
         <div>
-          <label
-            htmlFor="resume"
-            className="block font-medium text-gray-100 mb-2"
-          >
+          <label htmlFor="resume" className="block font-medium text-text mb-2">
             Upload CV/Resume *
           </label>
           <input
@@ -104,7 +101,7 @@ const JobApplicationForm = () => {
             // @ts-ignore
             onChange={(e) => setResume(e.target.files[0])}
             required
-            className="w-full backdrop-blur-sm p-3 text-white rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
+            className="w-full backdrop-blur-sm p-3 text-text rounded-md shadow-sm  bg-gray-500/50 sm:text-sm"
           />
           <p className="mt-2 text-sm text-gray-500">
             Allowed Type(s): .pdf, .doc, .docx
@@ -117,9 +114,9 @@ const JobApplicationForm = () => {
               checked={termsAgreed}
               onChange={(e) => setTermsAgreed(e.target.checked)}
               required
-              className="h-4 w-4 mt-1 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+              className="h-4 w-4 mt-1 text-indigo-600 text-text/20 rounded focus:ring-indigo-500"
             />
-            <span className="ml-2 text-sm text-gray-100">
+            <span className="ml-2 text-sm text-text/90">
               By using this form you agree with the storage and handling of your
               data by this website. *
             </span>
@@ -127,7 +124,7 @@ const JobApplicationForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-primary border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium text-white hover:bg-primary/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full bg-primary border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium lucin hover:bg-primary/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           Submit Application
         </button>
